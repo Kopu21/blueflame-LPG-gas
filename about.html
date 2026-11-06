@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - BlueFlame LPG Gas Agency & Energy Solutions</title>
+  <meta name="description" content="Learn about BlueFlame LPG Gas Agency: Our history, automated bottling infrastructure, doorstep safety standards, and commitment to clean household and commercial fuel.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            flame: {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <!-- Background Image System - Light & Dark Mode Compatible -->
+  <div class="site-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=80');" aria-hidden="true"></div>
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 glass-header bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-5 xl:px-8">
+      <div class="flex items-center justify-between lg:grid lg:grid-cols-[auto_1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-20 gap-2 lg:gap-2.5 xl:gap-4">
+        
+        <!-- LEFT SIDE – Brand Identity -->
+        <div class="flex items-center justify-start flex-shrink-0 min-w-0">
+          <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 xl:gap-3 group text-left min-w-0">
+            <div class="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-9.5 lg:h-9.5 xl:w-11 xl:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1 sm:gap-1.5">
+                <span class="text-lg sm:text-xl lg:text-xl xl:text-2xl font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] whitespace-nowrap">
+                  BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 flex-shrink-0">LPG</span>
+              </div>
+              <span class="text-[9px] sm:text-[10px] xl:text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider sm:tracking-widest leading-none whitespace-nowrap">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CENTRE – Main Navigation (Strict Order: 1. Home, 2. About, 3. Services, 4. Safety Tips, 5. Blog, 6. Dashboard, 7. Contact) -->
+        <nav class="hidden lg:flex items-center justify-center">
+          <div class="flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2">
+            
+            <!-- 1. Home (Dropdown: Home1, Home2) -->
+            <div class="relative group">
+              <button class="flex items-center gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+                <span>Home</span>
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+              <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-2 w-56 hidden group-hover:block group-focus-within:block z-50">
+                <div class="p-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-1.5">
+                  <a href="index.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home1</span>
+                      <span class="text-[10px] text-slate-400">Classic Agency</span>
+                    </div>
+                  </a>
+                  <a href="home2.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home2</span>
+                      <span class="text-[10px] text-slate-400">Smart Technology</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. About -->
+            <a href="about.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-bold text-sky-600 dark:text-sky-400 bg-sky-50/80 dark:bg-sky-950/50 border border-sky-200/50 dark:border-sky-800/50 transition whitespace-nowrap">
+              About
+            </a>
+
+            <!-- 3. Services -->
+            <a href="services.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Services
+            </a>
+
+            <!-- 4. Safety Tips -->
+            <a href="safety.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Safety Tips
+            </a>
+
+            <!-- 5. Blog -->
+            <a href="blog.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Blog
+            </a>
+
+            <!-- 6. Dashboard -->
+            <a href="dashboard.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Dashboard
+            </a>
+
+            <!-- 7. Contact -->
+            <a href="contact.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Contact
+            </a>
+
+          </div>
+        </nav>
+
+        <!-- RIGHT SIDE – Action Icons and Button in EXACT Order: 1. RTL/LTR, 2. Theme, 3. Login Icon Only, 4. Book a Gas -->
+        <div class="hidden lg:flex items-center justify-end gap-1.5 xl:gap-2.5 flex-shrink-0">
+          
+          <!-- 1. RTL/LTR toggle logo -->
+          <button onclick="toggleDirection()" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-4 h-4 dir-toggle-icon"></i>
+          </button>
+
+          <!-- 2. Dark/Light theme toggle -->
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-4 h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-toggle-icon-moon"></i>
+          </button>
+
+          <!-- 3. Consumer Login logo/icon only (NO text) -->
+          <div class="user-auth-status flex items-center flex-shrink-0">
+            <a href="login.html" aria-label="Consumer Login" title="Consumer Login Portal" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- 4. Book a Gas button -->
+          <a href="dashboard.html?tab=booking" class="px-2.5 xl:px-4 py-2 rounded-xl text-xs xl:text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-md shadow-sky-500/20 hover:shadow-sky-500/30 transition flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-sky-200"></i>
+            <span>Book a Gas</span>
+          </a>
+
+        </div>
+
+        <!-- Mobile/Tablet Trigger (< lg) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 lg:hidden flex-shrink-0">
+          <button onclick="toggleDirection()" aria-label="Toggle Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4 dir-toggle-icon"></i>
+          </button>
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-moon"></i>
+          </button>
+          <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" title="Menu" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div><!-- Mobile Drawer with All 7 Items + Accessible Controls & Book a Gas -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-4 pb-6 space-y-3">
+      <div class="flex flex-col space-y-1">
+        <div class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">Homepages</div>
+        <div class="grid grid-cols-2 gap-2 px-1 mb-2">
+          <a href="index.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Home1</span>
+          </a>
+          <a href="home2.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Home2</span>
+          </a>
+        </div>
+        <a href="about.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/50">About</a>
+        <a href="services.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Services</a>
+        <a href="safety.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Safety Tips</a>
+        <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Blog</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
+        <a href="contact.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between px-3">
+          <span class="text-xs font-semibold text-slate-500">Consumer Login</span>
+          <a href="login.html" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+            <i data-lucide="user" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+      <div class="pt-2">
+        <a href="dashboard.html?tab=booking" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-center text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 shadow-md">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>Book a Gas</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN ABOUT CONTENT -->
+  <main class="flex-grow">
+    
+    <!-- HERO HEADER WITH DEDICATED LPG AGENCY OPERATIONS BACKGROUND -->
+    <section class="relative py-20 sm:py-28 bg-slate-900 text-white overflow-hidden border-b border-slate-800">
+      <!-- High-Resolution LPG Distribution & Logistics Depot Background -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-1000 ease-out" 
+           style="background-image: url('assets/images/about-hero-bg.jpg');" 
+           aria-hidden="true"></div>
+      
+      <!-- Multi-stop Dark Gradient Overlay for optimal readability in both light & dark themes -->
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-900/60" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-sky-950/20 mix-blend-multiply" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-400/40 backdrop-blur-sm">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-400"></i>
+          <span>Authorized Energy Agency</span>
+        </span>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight max-w-3xl leading-tight">
+          Pioneering Clean Energy & Safe Doorstep LPG Delivery
+        </h1>
+        <p class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed font-normal">
+          Established in 2012, BlueFlame LPG Agency has grown from a local distributorship to a premier energy partner serving over 45,000 households and 1,200 commercial kitchens across the region.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-medium text-slate-300">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+            <i data-lucide="award" class="w-4 h-4 text-amber-400"></i> Authorized Regional Distributorship
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+            <i data-lucide="truck" class="w-4 h-4 text-emerald-400"></i> 100% Scheduled Doorstep Delivery
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: STORY & BOTTLING INFRASTRUCTURE -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 space-y-5 text-left">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-50 dark:bg-sky-950 px-3 py-1 rounded-full">
+              Our Infrastructure
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Automated Carousel Bottling & Rigid Safety Testing
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Every cylinder delivered by BlueFlame undergoes automated electronic tare verification, hydrostatic pressure testing, and multi-point sonic leak checks. Our computerized carousels ensure zero underfilling and zero contamination.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+                <span class="text-2xl font-black text-sky-600 dark:text-sky-400">45,000+</span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white block mt-1">Active Consumers</span>
+                <span class="text-[11px] text-slate-500">Across residential sectors</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+                <span class="text-2xl font-black text-emerald-600 dark:text-emerald-400">99.8%</span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white block mt-1">On-Time Deliveries</span>
+                <span class="text-[11px] text-slate-500">Fast doorstep service</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unique About Image 1 -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700 h-80 sm:h-96 group">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Modern energy facility and computerized gas distribution plant" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6 text-left">
+                <div class="text-white">
+                  <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Automated Hub</span>
+                  <h4 class="text-lg font-bold">State-of-the-Art Distribution Facility</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ENGINEERING & COMMUNITY (Topic-Specific Images) -->
+    <section class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          
+          <!-- Card 1: Quality Assurance (Certified Technical Team) -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="h-56 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img src="assets/images/about-tech-qa.jpg" 
+                     alt="Certified LPG technical inspection team examining cylinder valves and pressure safety" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div>
+                <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-50 dark:bg-sky-950 px-2.5 py-0.5 rounded-full border border-sky-200/60 dark:border-sky-800">
+                  Quality Assurance
+                </span>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Certified Technical Team</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                  Our certified LPG safety technicians conduct mandatory multi-point inspections on every valve, regulator seal, and pressure collar. Equipped with calibrated electronic detectors and pressure gauges, our team ensures zero leakage before dispatch.
+                </p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-500 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+              <span>100% Hydrostatic and Pneumatic Tested</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Community Focus (Consumer First Philosophy) -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="h-56 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img src="assets/images/about-consumer-philosophy.jpg" 
+                     alt="Dedicated LPG delivery professional conducting verified doorstep cylinder delivery rounds" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div>
+                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest bg-emerald-50 dark:bg-emerald-950 px-2.5 py-0.5 rounded-full border border-emerald-200/60 dark:border-emerald-800">
+                  Community Focus
+                </span>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Consumer First Philosophy</h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                  We believe clean, safe domestic fuel is essential to everyday home life. Our courteous doorstep delivery specialists assist elderly consumers with cylinder placement, conduct free burner leak checks, and offer prompt support with a human touch.
+                </p>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-500 flex items-center gap-2">
+              <i data-lucide="heart-handshake" class="w-4 h-4 text-sky-500"></i>
+              <span>Serving Over 45,000 Neighborhood Families</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: OUR LPG SUPPLY PROCESS -->
+    <section id="supply-process" class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
+        
+        <div class="max-w-2xl space-y-3">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full">
+            Supply Chain Precision
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Our End-to-End LPG Supply Process
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            From the initial consumer refill booking to the final secure doorstep handover, our synchronized logistics engine operates with complete accountability and real-time tracking.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Stage 1 -->
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-4 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-black text-lg">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Refill Request Intake</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Bookings received via digital portal, automated IVRS, or consumer desk are validated instantly against consumer entitlement quotas and mapped to the nearest delivery depot.
+            </p>
+            <span class="text-[11px] font-semibold text-sky-600 dark:text-sky-400 block pt-1">Automated Allocation</span>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-4 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-black text-lg">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Depot Tare & Seal Check</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Each cylinder is weighed on calibrated digital scales against stamped collar tare weights. Valves are tested with sonic leak sensors and secured with tamper-proof holographic caps.
+            </p>
+            <span class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 block pt-1">100% Quality Staging</span>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-4 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center font-black text-lg">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Smart Fleet Dispatch</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Cylinders are loaded onto GPS-monitored electric and low-emission delivery vehicles. Dynamic route clustering ensures minimal transit time and dependable delivery windows.
+            </p>
+            <span class="text-[11px] font-semibold text-amber-600 dark:text-amber-400 block pt-1">Optimized Urban Routing</span>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-4 hover:shadow-lg transition">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-lg">
+              04
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Doorstep Handover</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Delivery pilots conduct tare verification in front of the customer, demonstrate proper regulator locking, and collect the digital delivery OTP before concluding the handover.
+            </p>
+            <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 block pt-1">Verified OTP Completion</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: OUR SAFETY COMMITMENT -->
+    <section id="safety-commitment" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl space-y-3">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full">
+              Zero-Tolerance Safety
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Our Uncompromising Safety Commitment
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Operating an authorized LPG distribution network requires unyielding adherence to national petroleum safety codes. We prioritize consumer safety at every touchpoint.
+            </p>
+          </div>
+          <a href="safety.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 transition shadow flex-shrink-0">
+            <span>Read Safety Guidelines</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-6 sm:p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold">
+              <i data-lucide="shield" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Statutory Hydrostatic Testing</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              No cylinder leaves our depot without verified statutory test stamps. Cylinders reaching their 5-year re-test cycle are retired for factory hydrostatic pressure testing.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">O-Ring Gasket Replacement</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              The internal rubber O-ring is the primary barrier preventing leakage at the regulator neck. Any worn or hardened gasket is replaced immediately with PESO-certified nitrile rubber.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <div class="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Consumer Safety Education</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              We proactively educate families on the safe soap bubble leak test, kitchen ventilation rules, rubber hose replacement intervals, and overnight regulator shut-off practices.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: OUR SERVICE STANDARDS -->
+    <section id="service-standards" class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-12">
+        
+        <div class="max-w-2xl space-y-3">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full">
+            Transparent Benchmarks
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Our Everyday Service Standards
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Every household and business customer benefits from guaranteed service benchmarks designed for consistency, fairness, and dependable fuel delivery.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div class="text-2xl font-black text-sky-600 dark:text-sky-400">99.8%</div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">On-Time Arrival</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Refills delivered within the promised same-day or next-day scheduled slot across our authorized sectors.</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400">100%</div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Digital Invoicing</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Official GST tax invoices sent via SMS and downloadable directly from the consumer billing dashboard.</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div class="text-2xl font-black text-blue-600 dark:text-blue-400">&lt; 2 Hrs</div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Desk Response SLA</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Customer queries, address transfer requests, and technical service requests attended within 2 hours.</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div class="text-2xl font-black text-amber-500">Zero</div>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Hidden Charges</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Strict adherence to government-notified RSP tariff caps with zero unauthorized delivery surcharges.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: SUSTAINABLE OPERATIONS & CLEAN FLEET -->
+    <section id="sustainability" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-sky-900 via-slate-900 to-slate-950 text-white border border-sky-800/50 shadow-xl space-y-6">
+          <div class="max-w-2xl space-y-3">
+            <span class="text-xs font-bold text-sky-400 uppercase tracking-widest bg-sky-950/80 px-3 py-1 rounded-full border border-sky-700/60">
+              Future of Clean Energy
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+              Sustainable Operations & Fleet Electrification
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              We are actively transitioning our regional distribution fleet to zero-emission electric vehicles. In addition, we are leading the rollout of lightweight, translucent composite LPG cylinders to reduce logistics payload weight and urban carbon emissions.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+              <span class="text-xs font-bold text-sky-300 block">Electric Vans</span>
+              <p class="text-[11px] text-slate-300 mt-1">Zero tailpipe emissions during last-mile neighborhood delivery rounds.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+              <span class="text-xs font-bold text-emerald-300 block">Composite Cylinders</span>
+              <p class="text-[11px] text-slate-300 mt-1">100% recyclable polymeric bodies that eliminate tile rust and reduce deadweight.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+              <span class="text-xs font-bold text-amber-300 block">Paperless Operations</span>
+              <p class="text-[11px] text-slate-300 mt-1">End-to-end digital vouchers, e-KYC applications, and online tax receipting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RICH FOOTER WITH CLICKABLE BRAND LOGO, SOCIALS & LOCATION -->
+  <footer class="bg-slate-900 text-slate-300 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-left">
+        
+        <!-- Col 1: Brand Info & Clickable Logo -->
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center gap-3.5 group text-left">
+            <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-6 h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xl font-black tracking-tight text-white font-['Outfit']">
+                  BLUE<span class="text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[10px] font-bold rounded bg-sky-950 text-sky-300 border border-sky-400/30">LPG</span>
+              </div>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Government Authorized LPG Distribution Agency compliant with Petroleum and Explosives Safety Organization standards. Dedicated to providing dependable, clean cooking fuel and doorstep energy solutions.
+          </p>
+
+          <!-- Social Media Icons -->
+          <div class="pt-2">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Connect With Us</span>
+            <div class="flex items-center gap-3">
+              <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook Login" title="Facebook" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#1877F2] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram Login" title="Instagram" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#E4405F] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube Login" title="YouTube" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#FF0000] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition">Home1</a></li>
+            <li><a href="home2.html" class="hover:text-white transition">Home2</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="services.html" class="hover:text-white transition">Services & Refills</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Tips</a></li>
+            <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact & Branches</a></li>
+            <li><a href="dashboard.html" class="hover:text-white transition">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Consumer Services -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Services</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="services.html#new-connection" class="hover:text-white transition">Apply New Connection</a></li>
+            <li><a href="dashboard.html?tab=booking" class="hover:text-white transition">Book a Refill</a></li>
+            <li><a href="dashboard.html?tab=billing" class="hover:text-white transition">Download Tax Invoices</a></li>
+            <li><a href="services.html#stove-repair" class="hover:text-white transition">Burner Servicing</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Standards</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Desk -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Desk</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i> Office: 011-2440-9900</p>
+            <p class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-sky-400"></i> support@blueflamelpg.com</p>
+            <p class="text-[11px] text-slate-500 pt-1">Mon – Sat: 08:00 AM – 08:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Col 5: Location / Visit Us Section -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Location</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="font-semibold text-slate-200">Apex Energy Hub</p>
+            <p class="text-[11px] leading-relaxed text-slate-400">
+              14 Industrial Corridor, Sector 62,<br>
+              New Delhi, Delhi - 110001
+            </p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Apex+Energy+Hub+Sector+62+New+Delhi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 pt-1 group">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i>
+              <span>Get Directions</span>
+              <i data-lucide="external-link" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 BlueFlame LPG Gas Agency & Delivery Services Ltd. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

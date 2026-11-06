@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Login - BlueFlame LPG Gas Portal</title>
+  <meta name="description" content="Secure LPG Consumer Portal for booking refills, live tracking, and digital payments.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white relative">
+
+  <!-- Dedicated LPG Home Kitchen Background with Overlay -->
+  <div class="site-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=2000&q=80');" aria-hidden="true"></div>
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- MAIN CENTERED AUTHENTICATION CARD (Matches Attached Reference Screenshot Exactly) -->
+  <main class="flex-grow flex items-center justify-center py-6 sm:py-10 px-3 sm:px-6 relative z-10">
+    <div class="max-w-[480px] w-full bg-white dark:bg-slate-900 rounded-[28px] sm:rounded-[32px] border border-slate-200 dark:border-slate-800 shadow-2xl p-6 sm:p-8 space-y-5 text-left">
+      
+      <!-- TOP ROW: Brand Identity on Left, Theme & RTL/LTR on Right (Exact match to reference screenshot) -->
+      <div class="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+        
+        <!-- LEFT SIDE: Brand Logo with Name (Navigation Disabled on Login Page) -->
+        <div class="flex items-center gap-3 text-left min-w-0 cursor-default select-none" role="banner" aria-label="BlueFlame LPG Gas Agency & Delivery">
+          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-md flame-glow-blue flex-shrink-0">
+            <i data-lucide="flame" class="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]"></i>
+            <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-1.5">
+              <span class="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] truncate">
+                BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
+              </span>
+              <span class="px-1.5 py-0.2 text-[9px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 flex-shrink-0">LPG</span>
+            </div>
+            <span class="text-[9px] sm:text-[10px] font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-widest leading-none truncate">
+              Gas Agency & Delivery
+            </span>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Dark/Light Theme Toggle & RTL/LTR Direction Toggle -->
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <!-- Dark / Light Theme Toggle -->
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Dark/Light Theme" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-center shadow-sm">
+            <i data-lucide="sun" class="w-4 h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-toggle-icon-moon"></i>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle Icon -->
+          <button onclick="toggleDirection()" aria-label="Toggle Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-center shadow-sm">
+            <i data-lucide="arrow-left-right" class="w-4 h-4 dir-toggle-icon"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Segmented Pill Tabs: Sign In vs Create Account -->
+      <div class="flex p-1 bg-slate-100 dark:bg-slate-800 rounded-2xl border border-slate-200/70 dark:border-slate-700/70">
+        <button 
+          type="button" 
+          id="tab-btn-login" 
+          onclick="switchAuthTab('login')" 
+          class="flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition shadow-sm bg-teal-700 text-white dark:bg-teal-600"
+        >
+          Sign In
+        </button>
+        <button 
+          type="button" 
+          id="tab-btn-register" 
+          onclick="switchAuthTab('register')" 
+          class="flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        >
+          Create Account
+        </button>
+      </div>
+
+      <!-- ================= 1. LOGIN TAB SECTION ================= -->
+      <div id="section-login" class="space-y-5 block">
+        
+        <!-- Welcome Back Header -->
+        <div class="space-y-0.5 text-left">
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+            Welcome Back!
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            Login to access your consumer account.
+          </p>
+        </div>
+
+        <!-- Login Form -->
+        <form id="form-login" onsubmit="handleLoginSubmit(event)" class="space-y-4">
+          
+          <!-- Consumer ID / Registered Mobile Number Input -->
+          <div>
+            <label for="login-identifier" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">
+              Consumer ID / Registered Mobile Number
+            </label>
+            <input 
+              type="text" 
+              id="login-identifier" 
+              required 
+              placeholder="Enter Consumer ID or mobile number" 
+              value="LPG-8842-991"
+              class="w-full px-5 py-3 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+            >
+          </div>
+
+          <!-- Password Input with Show/Hide Toggle -->
+          <div>
+            <label for="login-password" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">
+              Password
+            </label>
+            <div class="relative">
+              <input 
+                type="password" 
+                id="login-password" 
+                required 
+                placeholder="Enter password" 
+                value="SecureGas#2026"
+                class="w-full pl-5 pr-12 py-3 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+              >
+              <button 
+                type="button" 
+                onclick="togglePasswordVisibility('login-password', this)" 
+                aria-label="Toggle Password Visibility"
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+              >
+                <i data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember Me & Forgot Password Row -->
+          <div class="flex items-center justify-between pt-0.5">
+            <label class="flex items-center gap-2 cursor-pointer text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <input 
+                type="checkbox" 
+                id="remember-me" 
+                checked
+                class="w-4 h-4 rounded-full border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-slate-900 dark:focus:ring-white"
+              >
+              <span>Remember Me</span>
+            </label>
+            <a href="#" onclick="showToast('Password reset instructions sent to registered mobile/email.', 'info')" class="text-xs sm:text-sm text-sky-600 dark:text-sky-400 font-medium hover:underline">
+              Forgot Password?
+            </a>
+          </div>
+
+          <!-- Big Solid Black Pill Login Button (Matching Reference Image) -->
+          <button 
+            type="submit" 
+            class="w-full py-3.5 px-6 rounded-full text-sm sm:text-base font-bold text-white bg-slate-950 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 shadow-md transition transform active:scale-[0.99] flex items-center justify-center gap-2"
+          >
+            <span>Login</span>
+          </button>
+
+        </form>
+
+        <!-- Divider: Or continue with -->
+        <div class="relative flex py-1 items-center">
+          <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+          <span class="flex-shrink mx-4 text-xs text-slate-400 dark:text-slate-500">Or continue with</span>
+          <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+        </div>
+
+        <!-- Social Login Buttons (Google & Apple - Side-by-Side Pill Buttons) -->
+        <div class="space-y-2">
+          <div class="grid grid-cols-2 gap-3">
+            <!-- Continue with Google -->
+            <button 
+              type="button" 
+              onclick="handleOAuthClick('Google')"
+              class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 transition shadow-sm"
+            >
+              <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Google</span>
+            </button>
+
+            <!-- Continue with Apple -->
+            <button 
+              type="button" 
+              onclick="handleOAuthClick('Apple')"
+              class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 transition shadow-sm"
+            >
+              <svg class="w-4 h-4 flex-shrink-0 fill-current text-slate-900 dark:text-white" viewBox="0 0 24 24">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.66-.8 1.11-1.92.99-3.04-1 .04-2.15.67-2.82 1.47-.58.68-1.1 1.82-.96 2.91 1.12.09 2.13-.54 2.79-1.34z"/>
+              </svg>
+              <span>Apple</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Link (Matching Reference Image) -->
+        <div class="text-center text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-2">
+          New consumer? <button type="button" onclick="switchAuthTab('register')" class="text-slate-900 dark:text-white font-bold hover:underline">Create an Account</button>
+        </div>
+
+      </div>
+
+      <!-- ================= 2. CREATE ACCOUNT TAB SECTION ================= -->
+      <div id="section-register" class="space-y-4 hidden">
+        
+        <!-- Registration Heading -->
+        <div class="space-y-0.5 text-left">
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+            Create an Account
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            Register for a new domestic or commercial LPG gas consumer account.
+          </p>
+        </div>
+
+        <!-- Registration Form (Matching Input Style) -->
+        <form id="form-register" onsubmit="handleRegisterSubmit(event)" class="space-y-3">
+          
+          <!-- Full Name -->
+          <div>
+            <label for="reg-name" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Full Name <span class="text-rose-500">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="reg-name" 
+              name="fullname"
+              data-validate="name"
+              pattern="^[A-Za-z\s]+$"
+              title="Please enter letters and spaces only"
+              required 
+              placeholder="Enter your full name" 
+              class="w-full px-5 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+            >
+          </div>
+
+          <!-- Registered Mobile & Email (Grid) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="reg-mobile" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Registered Mobile <span class="text-rose-500">*</span>
+              </label>
+              <input 
+                type="tel" 
+                id="reg-mobile" 
+                name="mobile"
+                data-validate="number"
+                inputmode="numeric"
+                required 
+                maxlength="10"
+                pattern="[6-9][0-9]{9}"
+                placeholder="10-digit mobile" 
+                class="w-full px-5 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+              >
+            </div>
+            <div>
+              <label for="reg-email" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Email Address <span class="text-rose-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="reg-email" 
+                required 
+                placeholder="Enter email address" 
+                class="w-full px-5 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+              >
+            </div>
+          </div>
+
+          <!-- Consumer ID (Optional) -->
+          <div>
+            <label for="reg-consumer-id" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Consumer ID <span class="text-slate-400 font-normal">(Optional if already assigned)</span>
+            </label>
+            <input 
+              type="text" 
+              id="reg-consumer-id" 
+              placeholder="e.g. LPG-8842-991 (Leave blank to generate)" 
+              class="w-full px-5 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+            >
+          </div>
+
+          <!-- Password & Confirm Password (Grid) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="reg-password" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Password <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative">
+                <input 
+                  type="password" 
+                  id="reg-password" 
+                  required 
+                  minlength="8"
+                  placeholder="Min 8 characters" 
+                  class="w-full pl-5 pr-10 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+                >
+                <button 
+                  type="button" 
+                  onclick="togglePasswordVisibility('reg-password', this)" 
+                  aria-label="Toggle Password Visibility"
+                  class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                >
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+            <div>
+              <label for="reg-confirm-password" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+                Confirm Password <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative">
+                <input 
+                  type="password" 
+                  id="reg-confirm-password" 
+                  required 
+                  minlength="8"
+                  placeholder="Repeat password" 
+                  class="w-full pl-5 pr-10 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+                >
+                <button 
+                  type="button" 
+                  onclick="togglePasswordVisibility('reg-confirm-password', this)" 
+                  aria-label="Toggle Password Visibility"
+                  class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                >
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Address -->
+          <div>
+            <label for="reg-address" class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Delivery Address <span class="text-rose-500">*</span>
+            </label>
+            <textarea 
+              id="reg-address" 
+              required 
+              rows="2" 
+              placeholder="Enter your complete residential delivery address"
+              class="w-full px-5 py-2.5 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition"
+            ></textarea>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="flex items-start">
+            <input 
+              type="checkbox" 
+              id="reg-terms" 
+              required
+              class="w-4 h-4 mt-0.5 rounded-full border-slate-300 text-slate-900 focus:ring-slate-900 dark:border-slate-700 dark:bg-slate-800"
+            >
+            <label for="reg-terms" class="ml-2 block text-xs text-slate-600 dark:text-slate-400 leading-tight">
+              I agree to the <a href="safety.html" class="text-sky-600 dark:text-sky-400 font-bold hover:underline">Terms of LPG Supply & Safety Regulations</a>. <span class="text-rose-500">*</span>
+            </label>
+          </div>
+
+          <!-- Create Account Black Pill Button -->
+          <button 
+            type="submit" 
+            class="w-full py-3.5 px-6 rounded-full text-sm sm:text-base font-bold text-white bg-slate-950 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 shadow-md transition transform active:scale-[0.99] flex items-center justify-center gap-2"
+          >
+            <span>Create Account</span>
+          </button>
+
+        </form>
+
+        <!-- Divider: Or continue with -->
+        <div class="relative flex py-1 items-center">
+          <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+          <span class="flex-shrink mx-4 text-xs text-slate-400 dark:text-slate-500">Or continue with</span>
+          <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+        </div>
+
+        <!-- Social Buttons -->
+        <div class="grid grid-cols-2 gap-3">
+          <button 
+            type="button" 
+            onclick="handleOAuthClick('Google')"
+            class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 transition shadow-sm"
+          >
+            <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Google</span>
+          </button>
+
+          <button 
+            type="button" 
+            onclick="handleOAuthClick('Apple')"
+            class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 transition shadow-sm"
+          >
+            <svg class="w-4 h-4 flex-shrink-0 fill-current text-slate-900 dark:text-white" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.66-.8 1.11-1.92.99-3.04-1 .04-2.15.67-2.82 1.47-.58.68-1.1 1.82-.96 2.91 1.12.09 2.13-.54 2.79-1.34z"/>
+            </svg>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <!-- Bottom Link -->
+        <div class="text-center text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-2">
+          Already registered? <button type="button" onclick="switchAuthTab('login')" class="text-slate-900 dark:text-white font-bold hover:underline">Login</button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- OAuth Notice Modal (Authentic Unconfigured Message) -->
+  <div id="oauth-notice-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-4 text-left">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+          </div>
+          <h3 id="oauth-modal-provider" class="text-sm font-bold text-slate-900 dark:text-white">OAuth Service Unconfigured</h3>
+        </div>
+        <button onclick="closeOAuthModal()" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <p id="oauth-modal-msg" class="text-xs text-slate-600 dark:text-slate-300">
+        Google / Apple OAuth 2.0 client credentials are not configured in this environment. Please sign in using your Consumer ID and password.
+      </p>
+      <div class="flex items-center justify-end gap-2 pt-2">
+        <button onclick="closeOAuthModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Tab switching between Login and Create Account
+    function switchAuthTab(tab) {
+      const loginSec = document.getElementById('section-login');
+      const regSec = document.getElementById('section-register');
+      const loginBtn = document.getElementById('tab-btn-login');
+      const regBtn = document.getElementById('tab-btn-register');
+
+      if (tab === 'login') {
+        loginSec.classList.remove('hidden');
+        loginSec.classList.add('block');
+        regSec.classList.remove('block');
+        regSec.classList.add('hidden');
+
+        loginBtn.className = 'flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition shadow-sm bg-teal-700 text-white dark:bg-teal-600';
+        regBtn.className = 'flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white';
+      } else {
+        regSec.classList.remove('hidden');
+        regSec.classList.add('block');
+        loginSec.classList.remove('block');
+        loginSec.classList.add('hidden');
+
+        regBtn.className = 'flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition shadow-sm bg-teal-700 text-white dark:bg-teal-600';
+        loginBtn.className = 'flex-1 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Toggle Show/Hide Password
+    function togglePasswordVisibility(fieldId, btn) {
+      const input = document.getElementById(fieldId);
+      if (!input) return;
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      btn.innerHTML = `<i data-lucide="${isPassword ? 'eye-off' : 'eye'}" class="w-4 h-4"></i>`;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Handle OAuth Click (Show notice without redirecting or faking auth)
+    function handleOAuthClick(provider) {
+      const modal = document.getElementById('oauth-notice-modal');
+      const modalTitle = document.getElementById('oauth-modal-provider');
+      if (modalTitle) modalTitle.innerText = `${provider} Login`;
+      if (modal) modal.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeOAuthModal() {
+      const modal = document.getElementById('oauth-notice-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Handle Login Form Submit
+    // Follows authentic flow: validates credentials, redirects on valid auth, stays on page with error on invalid credentials
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      const identifier = document.getElementById('login-identifier').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      if (!identifier) {
+        showToast('Please enter your Consumer ID or Registered Mobile Number.', 'error');
+        return;
+      }
+
+      if (!password) {
+        showToast('Please enter your account password.', 'error');
+        return;
+      }
+
+      // Check against registered users and authorized demo accounts
+      let registeredUsers = [];
+      try {
+        registeredUsers = JSON.parse(localStorage.getItem('lpg_registered_users') || '[]');
+      } catch (err) {
+        registeredUsers = [];
+      }
+
+      const registeredMatch = registeredUsers.find(u => 
+        (u.consumerId === identifier || u.mobile === identifier) && u.password === password
+      );
+
+      const isDefaultValid = (identifier === 'LPG-8842-991' || identifier === '9876543210') && password === 'SecureGas#2026';
+
+      if (isDefaultValid || registeredMatch) {
+        const authUser = {
+          consumerId: registeredMatch ? registeredMatch.consumerId : 'LPG-8842-991',
+          name: registeredMatch ? registeredMatch.name : 'Vikramaditya Sharma',
+          mobile: registeredMatch ? registeredMatch.mobile : '9876543210',
+          email: registeredMatch ? registeredMatch.email : 'vikram.sharma@example.com',
+          loginTime: new Date().toISOString()
+        };
+        localStorage.setItem('lpg_auth_user', JSON.stringify(authUser));
+        showToast('Authentication successful. Redirecting to Consumer Dashboard...', 'success');
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 700);
+      } else {
+        showToast('Invalid Consumer ID / Mobile Number or Password. Please check your credentials.', 'error');
+      }
+    }
+
+    // Handle Create Account Registration Submit
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('reg-name').value.trim();
+      const mobile = document.getElementById('reg-mobile').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const customConsumerId = document.getElementById('reg-consumer-id').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const confirmPassword = document.getElementById('reg-confirm-password').value;
+      const address = document.getElementById('reg-address').value.trim();
+      const terms = document.getElementById('reg-terms').checked;
+
+      // 1. Mandatory validation
+      if (!name || !mobile || !email || !password || !confirmPassword || !address) {
+        showToast('Please complete all mandatory fields marked with *.', 'error');
+        return;
+      }
+
+      // 2. Mobile validation (10 digits)
+      const mobilePattern = /^[6-9]\d{9}$/;
+      if (!mobilePattern.test(mobile)) {
+        showToast('Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.', 'error');
+        document.getElementById('reg-mobile').focus();
+        return;
+      }
+
+      // 3. Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        showToast('Please enter a valid email address.', 'error');
+        document.getElementById('reg-email').focus();
+        return;
+      }
+
+      // 4. Password matching validation
+      if (password !== confirmPassword) {
+        showToast('Passwords do not match. Please ensure both passwords are identical.', 'error');
+        document.getElementById('reg-confirm-password').focus();
+        return;
+      }
+
+      // 5. Terms agreement validation
+      if (!terms) {
+        showToast('You must agree to the Terms of LPG Supply & Safety Regulations.', 'error');
+        return;
+      }
+
+      // Generate consumer ID if not provided
+      const finalConsumerId = customConsumerId || `LPG-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(100 + Math.random() * 900)}`;
+
+      // Save into registered users
+      try {
+        const users = JSON.parse(localStorage.getItem('lpg_registered_users') || '[]');
+        users.push({
+          consumerId: finalConsumerId,
+          name: name,
+          mobile: mobile,
+          email: email,
+          password: password,
+          address: address
+        });
+        localStorage.setItem('lpg_registered_users', JSON.stringify(users));
+      } catch (err) {
+        console.warn('Could not save to localStorage', err);
+      }
+
+      // Switch to login tab and prefill identifier
+      switchAuthTab('login');
+      const idInput = document.getElementById('login-identifier');
+      if (idInput) idInput.value = finalConsumerId;
+      const passInput = document.getElementById('login-password');
+      if (passInput) passInput.value = password;
+
+      showToast(`Account created for ${name} (ID: ${finalConsumerId}). You may now sign in.`, 'success');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Read URL hash on load (e.g. #register) & stay on login page
+    document.addEventListener('DOMContentLoaded', () => {
+      // Clear any session so login page remains clean and on this page
+      localStorage.removeItem('lpg_auth_user');
+
+      if (window.location.hash === '#register') {
+        switchAuthTab('register');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPG Safety Guidelines - BlueFlame Gas Agency</title>
+  <meta name="description" content="Crucial LPG safety rules, interactive soap bubble leak test guide, household emergency safety steps, and kitchen best practices.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <!-- Background Image System - Light & Dark Mode Compatible -->
+  <div class="site-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=2000&q=80');" aria-hidden="true"></div>
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 glass-header bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-5 xl:px-8">
+      <div class="flex items-center justify-between lg:grid lg:grid-cols-[auto_1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-20 gap-2 lg:gap-2.5 xl:gap-4">
+        
+        <!-- LEFT SIDE – Brand Identity -->
+        <div class="flex items-center justify-start flex-shrink-0 min-w-0">
+          <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 xl:gap-3 group text-left min-w-0">
+            <div class="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-9.5 lg:h-9.5 xl:w-11 xl:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1 sm:gap-1.5">
+                <span class="text-lg sm:text-xl lg:text-xl xl:text-2xl font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] whitespace-nowrap">
+                  BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 flex-shrink-0">LPG</span>
+              </div>
+              <span class="text-[9px] sm:text-[10px] xl:text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider sm:tracking-widest leading-none whitespace-nowrap">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CENTRE – Main Navigation (Strict Order: 1. Home, 2. About, 3. Services, 4. Safety Tips, 5. Blog, 6. Dashboard, 7. Contact) -->
+        <nav class="hidden lg:flex items-center justify-center">
+          <div class="flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2">
+            
+            <!-- 1. Home (Dropdown: Home1, Home2) -->
+            <div class="relative group">
+              <button class="flex items-center gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+                <span>Home</span>
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+              <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-2 w-56 hidden group-hover:block group-focus-within:block z-50">
+                <div class="p-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-1.5">
+                  <a href="index.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home1</span>
+                      <span class="text-[10px] text-slate-400">Classic Agency</span>
+                    </div>
+                  </a>
+                  <a href="home2.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home2</span>
+                      <span class="text-[10px] text-slate-400">Smart Technology</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. About -->
+            <a href="about.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              About
+            </a>
+
+            <!-- 3. Services -->
+            <a href="services.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Services
+            </a>
+
+            <!-- 4. Safety Tips -->
+            <a href="safety.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-bold text-sky-600 dark:text-sky-400 bg-sky-50/80 dark:bg-sky-950/50 border border-sky-200/50 dark:border-sky-800/50 transition whitespace-nowrap">
+              Safety Tips
+            </a>
+
+            <!-- 5. Blog -->
+            <a href="blog.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Blog
+            </a>
+
+            <!-- 6. Dashboard -->
+            <a href="dashboard.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Dashboard
+            </a>
+
+            <!-- 7. Contact -->
+            <a href="contact.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Contact
+            </a>
+
+          </div>
+        </nav>
+
+        <!-- RIGHT SIDE – Action Icons and Button in EXACT Order: 1. RTL/LTR, 2. Theme, 3. Login Icon Only, 4. Book a Gas -->
+        <div class="hidden lg:flex items-center justify-end gap-1.5 xl:gap-2.5 flex-shrink-0">
+          
+          <!-- 1. RTL/LTR toggle logo -->
+          <button onclick="toggleDirection()" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-4 h-4 dir-toggle-icon"></i>
+          </button>
+
+          <!-- 2. Dark/Light theme toggle -->
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-4 h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-toggle-icon-moon"></i>
+          </button>
+
+          <!-- 3. Consumer Login logo/icon only (NO text) -->
+          <div class="user-auth-status flex items-center flex-shrink-0">
+            <a href="login.html" aria-label="Consumer Login" title="Consumer Login Portal" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- 4. Book a Gas button -->
+          <a href="dashboard.html?tab=booking" class="px-2.5 xl:px-4 py-2 rounded-xl text-xs xl:text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-md shadow-sky-500/20 hover:shadow-sky-500/30 transition flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-sky-200"></i>
+            <span>Book a Gas</span>
+          </a>
+
+        </div>
+
+        <!-- Mobile/Tablet Trigger (< lg) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 lg:hidden flex-shrink-0">
+          <button onclick="toggleDirection()" aria-label="Toggle Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4 dir-toggle-icon"></i>
+          </button>
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-moon"></i>
+          </button>
+          <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" title="Menu" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div><!-- Mobile Drawer with All 7 Items + Accessible Controls & Book a Gas -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-4 pb-6 space-y-3">
+      <div class="flex flex-col space-y-1">
+        <div class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">Homepages</div>
+        <div class="grid grid-cols-2 gap-2 px-1 mb-2">
+          <a href="index.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Home1</span>
+          </a>
+          <a href="home2.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Home2</span>
+          </a>
+        </div>
+        <a href="about.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+        <a href="services.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Services</a>
+        <a href="safety.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/50">Safety Tips</a>
+        <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Blog</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
+        <a href="contact.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between px-3">
+          <span class="text-xs font-semibold text-slate-500">Consumer Login</span>
+          <a href="login.html" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+            <i data-lucide="user" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+      <div class="pt-2">
+        <a href="dashboard.html?tab=booking" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-center text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 shadow-md">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>Book a Gas</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SAFETY CONTENT -->
+  <main class="flex-grow">
+    
+    <!-- HERO HEADER WITH REALISTIC LPG SAFETY BACKGROUND -->
+    <section class="relative py-14 sm:py-20 bg-gradient-to-b from-slate-100 via-sky-50/40 to-slate-50 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-950 border-b border-slate-200/80 dark:border-slate-800 overflow-hidden">
+      <!-- Background Image with Light & Dark Mode Overlays -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/safety-hero-bg.jpg" 
+             alt="LPG Gas Safety Inspection Operations and Standards Facility" 
+             class="w-full h-full object-cover object-center">
+        <!-- Dual Light / Dark overlay for optimal readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/75 dark:from-slate-950/95 dark:via-slate-950/85 dark:to-slate-900/80 backdrop-blur-[1px]"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-100/90 dark:bg-sky-950/90 text-sky-700 dark:text-sky-300 border border-sky-300/60 dark:border-sky-800 shadow-sm backdrop-blur-sm">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Certified PESO Safety Standards
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+          LPG Safety Guide & Handling Instructions
+        </h1>
+        <p class="text-base text-slate-700 dark:text-slate-200 max-w-2xl mx-auto leading-relaxed font-medium">
+          Knowledge saves lives. Learn certified handling protocols, perform safe soap-bubble leak inspections, and establish accident-free everyday household kitchen habits.
+        </p>
+
+        <!-- Quick Jump Pills -->
+        <div class="pt-3 flex flex-wrap items-center justify-center gap-2 text-xs">
+          <a href="#emergency-flow" class="px-3 py-1.5 rounded-full font-bold bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-900 hover:bg-rose-200 transition flex items-center gap-1.5">
+            <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Smell Gas? Emergency Protocol
+          </a>
+          <a href="#leak-test" class="px-3 py-1.5 rounded-full font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 hover:bg-sky-200 transition flex items-center gap-1.5">
+            <i data-lucide="droplet" class="w-3.5 h-3.5"></i> Soap Bubble Test
+          </a>
+          <a href="#cylinder-installation" class="px-3 py-1.5 rounded-full font-bold bg-teal-100 dark:bg-teal-950/80 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 hover:bg-teal-200 transition flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Safe Installation
+          </a>
+          <a href="#safety-faqs" class="px-3 py-1.5 rounded-full font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 transition flex items-center gap-1.5">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5"></i> Safety FAQs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: WHAT TO DO IF YOU SUSPECT AN LPG LEAK (6-Step Emergency Protocol) -->
+    <section id="emergency-flow" class="py-14 sm:py-20 bg-rose-50/50 dark:bg-slate-900/60 border-b border-rose-200/60 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-rose-200 dark:border-slate-800 text-left">
+          <div>
+            <span class="text-xs font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest bg-rose-100 dark:bg-rose-950 px-3 py-1 rounded-full border border-rose-200 dark:border-rose-900">
+              Emergency Action Protocol
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-2">
+              What to Do If You Suspect an LPG Leak
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-2xl">
+              Ethyl mercaptan gives LPG its distinct pungent warning odor. If you smell gas, remain calm and follow these 6 non-negotiable life-saving steps in exact order.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-semibold text-rose-700 dark:text-rose-300 bg-rose-100/80 dark:bg-rose-950/80 px-3.5 py-2 rounded-xl border border-rose-200 dark:border-rose-900 flex-shrink-0">
+            <i data-lucide="phone-call" class="w-4 h-4 text-rose-600 animate-pulse"></i>
+            <span>Emergency Helpline: 1800-233-3555</span>
+          </div>
+        </div>
+
+        <!-- 6 Step-by-Step Emergency Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+          
+          <!-- Step 1 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/80 shadow-md space-y-3 hover:shadow-lg transition">
+            <div class="flex items-center justify-between">
+              <span class="w-9 h-9 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center font-black text-sm">
+                01
+              </span>
+              <span class="text-xs font-bold text-rose-500 uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="flame" class="w-3.5 h-3.5"></i> Strict Prohibition
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base">No Matches or Open Flames</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Do not light matchsticks, candles, incense sticks, or cigarettes. Never test for gas leaks using a lighter or flame under any circumstances.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/80 shadow-md space-y-3 hover:shadow-lg transition">
+            <div class="flex items-center justify-between">
+              <span class="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center font-black text-sm">
+                02
+              </span>
+              <span class="text-xs font-bold text-amber-500 uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="zap-off" class="w-3.5 h-3.5"></i> Spark Prevention
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base">Do Not Operate Electrical Switches</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Do NOT touch light switches, exhaust fans, doorbells, or electrical appliances. Flipping switches generates micro-sparks that can ignite gas vapor.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-900/80 shadow-md space-y-3 hover:shadow-lg transition">
+            <div class="flex items-center justify-between">
+              <span class="w-9 h-9 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-black text-sm">
+                03
+              </span>
+              <span class="text-xs font-bold text-sky-500 uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="power" class="w-3.5 h-3.5"></i> Fuel Cutoff
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base">Turn Off Regulator & Valve</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              If it is safe to approach, immediately turn the cylinder regulator switch clockwise to the OFF position and cap the valve to isolate the supply.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/80 shadow-md space-y-3 hover:shadow-lg transition">
+            <div class="flex items-center justify-between">
+              <span class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-sm">
+                04
+              </span>
+              <span class="text-xs font-bold text-emerald-500 uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="wind" class="w-3.5 h-3.5"></i> Floor Dispersion
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base">Open Doors & Windows</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Throw open all kitchen windows and outer doors to establish cross-ventilation. LPG is heavier than air and sinks; natural air current sweeps it outdoors.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-900/80 shadow-md space-y-3 hover:shadow-lg transition">
+            <div class="flex items-center justify-between">
+              <span class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-black text-sm">
+                05
+              </span>
+              <span class="text-xs font-bold text-purple-500 uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i> Safe Evacuation
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base">Keep People Away & Evacuate</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Evacuate all household occupants, children, and pets immediately to open ground. Do not re-enter the dwelling until the odor has completely vanished.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/80 shadow-md space-y-3 hover:shadow-lg transition">
+            <div class="flex items-center justify-between">
+              <span class="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-black text-sm">
+                06
+              </span>
+              <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> Professional Dispatch
+              </span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base">Call Distributor from Safe Distance</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Step into open air outside the building and call our 24/7 Agency Helpline at 011-2440-9900 or National Emergency 1906 for instant technical response.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Emergency Response Patrol Banner with Image -->
+        <div class="rounded-3xl bg-gradient-to-r from-slate-900 to-slate-950 text-white p-6 sm:p-8 border border-slate-800 shadow-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
+            <div class="lg:col-span-4 rounded-2xl overflow-hidden h-52 sm:h-56 border border-slate-700/80 shadow">
+              <img src="assets/images/safety-emergency-response.jpg" 
+                   alt="Certified LPG emergency response technician with gas sniffer equipment" 
+                   class="w-full h-full object-cover">
+            </div>
+            <div class="lg:col-span-8 space-y-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                <i data-lucide="clock" class="w-3.5 h-3.5"></i> 2-Hour Rapid Emergency Intervention
+              </span>
+              <h3 class="text-xl sm:text-2xl font-black text-white">
+                Dedicated Doorstep Gas Leak & Emergency Patrol Fleet
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Our agency operates round-the-clock emergency patrol vans equipped with calibrated electronic sniffer probes, explosion-proof extraction blowers, and certified spare safety regulators. If you experience lingering gas smells, our technicians reach your premises rapidly.
+              </p>
+              <div class="pt-2 flex flex-wrap items-center gap-3">
+                <a href="tel:18002333555" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-rose-600 hover:bg-rose-500 transition shadow flex items-center gap-2">
+                  <i data-lucide="phone-call" class="w-4 h-4"></i> Call Emergency Desk (1800-233-3555)
+                </a>
+                <a href="tel:01124409900" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition flex items-center gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i> Local Office: 011-2440-9900
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE SOAP BUBBLE LEAK TEST & 100% AIRTIGHT SIMULATION -->
+    <section id="leak-test" class="py-14 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 space-y-5 text-left">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full border border-sky-300/50">
+              Standard Testing Method
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              The Soap Bubble Leak Inspection
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Never use an open flame to detect gas leaks. The only authorized household and commercial testing method is applying rich soap-water foam around the cylinder valve nozzle, regulator locking joint, and rubber hose fittings.
+            </p>
+            
+            <div class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60">
+                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block font-bold">No Bubbles (100% Airtight):</strong>
+                  <span>The soapy foam remains static without foaming or expansion. The internal O-ring and brass connection collar are completely sealed and safe for cooking.</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block font-bold">Growing Foam / Expanding Bubbles:</strong>
+                  <span>Gas is escaping from the joint. Immediately turn off the regulator, unclamp it, check the internal O-ring seal, and refit firmly until bubbles vanish.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <button onclick="simulateLeakTest()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 transition shadow flex items-center gap-2">
+                <i data-lucide="play" class="w-4 h-4"></i> Simulate Leak Inspection
+              </button>
+              <button onclick="setTestState(true)" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-500"></i> Simulate Leak Warning
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Visual Simulation Card with Real Soap Leak Inspection Photo -->
+          <div class="lg:col-span-6">
+            <div class="p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-xl space-y-5 text-center">
+              
+              <!-- Image Banner Demonstrating Soap Water Leak Inspection -->
+              <div class="relative h-48 sm:h-56 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 group shadow-inner">
+                <img src="assets/images/safety-soap-test.jpg" 
+                     alt="LPG cylinder soap water foam leak test on brass valve and regulator connection" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent flex items-end p-4">
+                  <div class="text-left text-white">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-400/30">
+                      Standard Inspection Demonstration
+                    </span>
+                    <h4 class="text-sm sm:text-base font-bold mt-1">
+                      Soap Foam Application on Valve & Regulator Collar
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Simulation Controls & Indicator -->
+              <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80">
+                <div class="relative w-24 h-24 flex-shrink-0 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-2 border-slate-200 dark:border-slate-700 shadow-inner">
+                  <i data-lucide="flame" class="w-10 h-10 text-sky-600 dark:text-sky-400"></i>
+                  
+                  <!-- Bubbles Indicator -->
+                  <div id="sim-bubbles" class="hidden absolute inset-0 rounded-2xl border-2 border-dashed border-rose-500 animate-spin flex items-center justify-center bg-rose-500/15">
+                    <span class="text-[10px] font-black text-rose-600 dark:text-rose-400 bg-white dark:bg-slate-900 px-1.5 py-0.5 rounded shadow">LEAK</span>
+                  </div>
+
+                  <!-- Safe Seal Badge -->
+                  <div id="sim-safe-badge" class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-emerald-500 text-white text-[10px] font-bold shadow flex items-center gap-1 whitespace-nowrap">
+                    <i data-lucide="shield-check" class="w-3 h-3"></i> 100% Airtight
+                  </div>
+                </div>
+
+                <div class="flex-1 text-center sm:text-left space-y-1">
+                  <div class="flex items-center justify-center sm:justify-start gap-2">
+                    <span id="sim-status" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                      ✓ Seal Tight (No Bubbles)
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    Interactive safety simulation engine. Click above to trigger real-time inspection feedback.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: SAFE LPG CYLINDER INSTALLATION (Topic A) -->
+    <section id="cylinder-installation" class="py-14 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 space-y-5 text-left">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border border-teal-300/50">
+              01 • Setup Protocol
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+              Safe LPG Cylinder Installation Standards
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Proper cylinder positioning is the fundamental pillar of household safety. A compliant installation ensures natural ventilation, eliminates thermal stress, and guarantees immediate access during emergencies.
+            </p>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Keep Cylinder Strictly Upright:</strong> Always place the cylinder vertically upright on a firm, flat, level floor or certified roller stand. Never tilt, slant, or invert a cylinder.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Maintain Ample Ground-Level Ventilation:</strong> Install in an airy space with unrestricted low-level air movement. Never box cylinders inside sealed, airtight cabinets without ventilation louvers.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Safe Distance from Heat & Sparks:</strong> Keep the cylinder at least 1 meter away from burning gas stoves, electric heaters, ovens, power outlets, and combustible chemicals.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Audible Locking Collar Engagement:</strong> When attaching the regulator, press down firmly until the quick-release collar locks with an audible click, ensuring an airtight seal.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Keep Installation Area Free & Clear:</strong> Maintain clear passage around the cylinder. Never stack cooking utensils, grocery bags, or cleaning supplies around the valve.</span>
+              </li>
+            </ul>
+
+            <div class="pt-2">
+              <a href="services.html#new-connection" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-teal-600 hover:bg-teal-500 shadow-md transition inline-flex items-center gap-2">
+                <i data-lucide="user-plus" class="w-4 h-4"></i> Book Professional Installation
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 h-80 sm:h-96 group">
+              <img src="assets/images/safety-safe-installation.jpg" 
+                   alt="Safe domestic LPG cylinder installation in modern ventilated kitchen" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                <div class="text-left text-white">
+                  <span class="text-xs font-bold uppercase tracking-wider text-teal-400">Kitchen Best Practice</span>
+                  <h4 class="text-lg font-bold">Upright Placement on Flat Surface with Open Airflow</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: LPG HOSE & REGULATOR MAINTENANCE (Topic B) -->
+    <section id="hose-maintenance" class="py-14 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 lg:order-2 space-y-5 text-left">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300 border border-orange-300/50">
+              02 • Hardware Care
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+              LPG Hose & Regulator Maintenance
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Rubber hoses and pressure regulators endure continuous fuel friction and kitchen grease. Systematic inspection and adhering to certified replacement intervals prevents micro-fissures and joint degradation.
+            </p>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Monthly Visual Surface Inspection:</strong> Inspect the flexible orange Suraksha hose for micro-cracks, stiffness, chemical softening, heat hardening, or rodent bite abrasions.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Check Internal Valve O-Ring Seal:</strong> Before attaching a new refill, inspect the inner rubber O-ring gasket inside the cylinder valve neck. If dry, torn, or displaced, replace it immediately.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Replace Every 5 Years via Authorized Source:</strong> ISI-certified steel-wire braided Suraksha hoses have a mandatory 5-year service life. Never purchase unbranded local plastic tubes.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Avoid Bending, Twisting & Heavy Loads:</strong> Route the safety hose gently without sharp 90-degree corners, kinks, or heavy cutting boards and pots pressing against the rubber jacket.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Zero DIY Repairs:</strong> Never attempt temporary fixes with electrical tape, sealants, or improvised clamps. Gas pressures require certified factory-molded fittings.</span>
+              </li>
+            </ul>
+
+            <div class="pt-2">
+              <a href="services.html#stove-repair" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-orange-600 hover:bg-orange-500 shadow-md transition inline-flex items-center gap-2">
+                <i data-lucide="wrench" class="w-4 h-4"></i> Order Genuine Suraksha Hose Kit
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 lg:order-1">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 h-80 sm:h-96 group">
+              <img src="assets/images/safety-regulator-maintenance.jpg" 
+                   alt="Certified technician inspecting domestic LPG regulator and Suraksha hose" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                <div class="text-left text-white">
+                  <span class="text-xs font-bold uppercase tracking-wider text-orange-400">Component Integrity</span>
+                  <h4 class="text-lg font-bold">O-Ring Gasket & Steel-Braided Suraksha Hose Verification</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: SAFE CYLINDER STORAGE & HANDLING (Topic C) -->
+    <section id="cylinder-storage" class="py-14 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 space-y-5 text-left">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-300/50">
+              03 • Storage Standards
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+              Safe Cylinder Storage & Handling Precautions
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Whether storing a backup DBC domestic refill or managing commercial cylinder banks, proper physical containment isolates fuel from thermal expansion risks and mechanical impact.
+            </p>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Dedicated Well-Ventilated Storage:</strong> Store spare cylinders in cool, dry, ground-level spaces with cross-ventilation. Protect cylinder shells from rain and direct sunlight.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Maintain Electrical Isolation:</strong> Keep storage zones completely clear of electrical switchgear, high-amp circuits, battery inverters, and combustible items.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Never in Basements or Sub-Pits:</strong> Because LPG is denser than ambient air, any minor leak accumulates in low pits and basements, posing extreme explosion risks.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Avoid Dropping, Dragging or Rolling:</strong> Always lift cylinders using the welded protective collar handles. Never roll cylinders horizontally along road surfaces.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Keep Safety Cap Firmly Attached:</strong> When a cylinder is disconnected or held in reserve, keep the molded plastic safety cap securely tethered over the brass valve.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 h-80 sm:h-96 group">
+              <img src="assets/images/safety-cylinder-storage.jpg" 
+                   alt="Safe upright LPG cylinder storage in secure ventilated facility" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                <div class="text-left text-white">
+                  <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Compliant Holding</span>
+                  <h4 class="text-lg font-bold">Upright, Well-Ventilated Ground-Level Cylinder Bay</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: EVERYDAY LPG SAFETY HABITS (Topic E) -->
+    <section id="daily-habits" class="py-14 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 lg:order-2 space-y-5 text-left">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300/50">
+              04 • Daily Best Practices
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+              Everyday LPG Safety Habits for Peace of Mind
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Safety is a continuous routine. Establishing five simple daily discipline steps transforms domestic cooking into an accident-free family experience.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                <div class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                  01
+                </div>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Turn Off Burner Knobs</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Always rotate stove burner knobs clockwise to OFF immediately once meal preparation concludes.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                <div class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                  02
+                </div>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Close Night Regulator</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Switch off the cylinder regulator knob every night before sleeping or whenever vacating the home.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                <div class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                  03
+                </div>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Keep Flammables Away</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Keep cooking oils, kitchen towels, curtains, paper boxes, and plastic bottles at least 3 feet from burners.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                <div class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                  04
+                </div>
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">Never Leave Unattended</h4>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Never leave simmering pans or boiling milk unattended; boiled-over liquids can blow out the flame while gas flows.</p>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 flex items-center gap-3">
+              <i data-lucide="shield-check" class="w-5 h-5 text-amber-600 flex-shrink-0"></i>
+              <span class="text-xs text-slate-700 dark:text-slate-300 font-medium">
+                <strong>Child-Safe Kitchen Rule:</strong> Keep children away from cylinder valves and stove knobs; install flame-retardant safety knob guards if needed.
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 lg:order-1">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 h-80 sm:h-96 group">
+              <img src="assets/images/safety-cooking-habits.jpg" 
+                   alt="Everyday safe domestic cooking environment with clean kitchen and blue flame" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                <div class="text-left text-white">
+                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Home Kitchen Safety</span>
+                  <h4 class="text-lg font-bold">Vigilant Cooking Habits & Nightly Regulator Shut-Off</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: DO'S AND DON'TS GRID (Certified PESO Comparison) -->
+    <section id="safety-rules" class="py-14 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-10">
+        
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full border border-sky-300/50">
+            Handling Essentials
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            Household LPG Safety Do's and Don'ts
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            Adhere strictly to certified safety guidelines approved by the Petroleum and Explosives Safety Organisation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- DO'S CARD -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 shadow-md space-y-5">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+              <div class="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                <i data-lucide="check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Recommended Safety Do's</h3>
+            </div>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <span>Always keep the LPG cylinder in an upright, vertical position on a flat, level surface.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <span>Ensure adequate natural ventilation around the kitchen floor and cylinder storage area.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <span>Turn off the cylinder regulator switch whenever the stove is not in use, especially at night.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <span>Use certified steel-wire reinforced orange Suraksha rubber hoses and replace every 5 years.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5"></i>
+                <span>Verify delivery tare weight and security seal intactness before accepting cylinder delivery.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- DON'TS CARD -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-900/60 shadow-md space-y-5">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+              <div class="w-10 h-10 rounded-2xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold">
+                <i data-lucide="x" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Strict Safety Don'ts</h3>
+            </div>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                <span>Never roll, slide, or store an LPG cylinder horizontally on its side or upside down.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                <span>Never use unapproved local plastic hoses or damaged rubber pipes showing cracks or hardening.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                <span>Never store kerosene, spirits, paint thinners, or flammable solvents in the cylinder room.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                <span>Never inspect for gas leaks using matchsticks, lighters, or open flames under any condition.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5"></i>
+                <span>Never install cylinders in underground basements, unventilated cavities, or closed trenches.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 8: 5-POINT PRE-DELIVERY INSPECTION CHECKLIST -->
+    <section id="cylinder-safety" class="py-14 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-8">
+        
+        <div>
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full border border-sky-300/50">
+            Certified Quality Assurance
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-2">
+            5-Point Cylinder Safety & Doorstep Inspection Standard
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-2xl mt-1">
+            Every BlueFlame LPG cylinder undergoes a certified 5-point quality verification before and during delivery.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Step 1</span>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Tare Weight Check</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Empty cylinder tare weight stamped on collar is cross-verified on digital load scales to ensure exact net 14.2 kg gas fill.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Step 2</span>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">O-Ring Gasket Seal</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Internal rubber O-ring inside the brass cylinder valve is inspected to ensure it is crack-free, supple, and correctly seated.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Step 3</span>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Holographic Cap</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Tamper-evident heat-shrink holographic safety seal is inspected intact prior to handover, verifying genuine factory purity.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Step 4</span>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Statutory Hydro-Test</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Collar alpha-numeric code (e.g., A-28, B-29) is cross-checked to guarantee hydrostatic re-test testing validity has not elapsed.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-2">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Step 5</span>
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Pre-Delivery Demo</h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Delivery personnel demonstrate airtight regulator locking and soap leak check at your kitchen premises upon delivery request.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: LPG SAFETY FAQS (Topic F) -->
+    <section id="safety-faqs" class="py-14 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-8">
+        
+        <div class="text-center space-y-3 mb-6">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full border border-sky-300/50">
+            Consumer Knowledge Desk
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            Frequently Asked LPG Safety Questions
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            Quick, reliable answers to essential household gas handling and hardware maintenance inquiries.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- FAQ 1 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition">
+            <button onclick="toggleFaq('faq-1')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
+              <span class="text-sm sm:text-base flex items-center gap-2.5">
+                <i data-lucide="help-circle" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
+                How often should an LPG safety hose and regulator be inspected and replaced?
+              </span>
+              <i id="faq-1-icon" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0"></i>
+            </button>
+            <div id="faq-1" class="hidden px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
+              You should perform a visual inspection of your LPG rubber hose at least once every month to check for surface cracking, brittleness, or rodent nibbles. Under BIS IS:9573 standards, an authentic steel-wire reinforced orange Suraksha hose must be <strong>mandatorily replaced every 5 years</strong>, even if no visible wear is evident. Regulators should be inspected every 5 to 7 years or replaced immediately if the quick-release locking collar becomes wobbly or stiff.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition">
+            <button onclick="toggleFaq('faq-2')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
+              <span class="text-sm sm:text-base flex items-center gap-2.5">
+                <i data-lucide="help-circle" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
+                What should I do immediately if I smell gas in my home?
+              </span>
+              <i id="faq-2-icon" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0"></i>
+            </button>
+            <div id="faq-2" class="hidden px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
+              Do NOT touch any electrical light switches, exhaust fans, doorbells, or telephone handsets. Do not light matchsticks or lighters. Immediately turn the cylinder regulator switch clockwise to the OFF position, open all doors and windows wide to let gas disperse outdoors, evacuate all family members and pets into fresh air, and call our 24/7 emergency dispatch helpline at <strong>1800-233-3555</strong> from an outdoor location.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition">
+            <button onclick="toggleFaq('faq-3')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
+              <span class="text-sm sm:text-base flex items-center gap-2.5">
+                <i data-lucide="help-circle" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
+                Why should an LPG cylinder always remain upright and never stored on its side?
+              </span>
+              <i id="faq-3-icon" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0"></i>
+            </button>
+            <div id="faq-3" class="hidden px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
+              LPG is stored inside the cylinder under pressure as a liquid with vapor occupying the upper headspace. When kept upright, only vapor enters the low-pressure regulator. If placed horizontally on its side, liquid gas enters the regulator, which can rupture the internal diaphragm, flood the rubber hose, and cause a sudden, uncontrollable high-pressure liquid flare-up.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition">
+            <button onclick="toggleFaq('faq-4')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
+              <span class="text-sm sm:text-base flex items-center gap-2.5">
+                <i data-lucide="help-circle" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
+                How can I identify a damaged, worn-out, or faulty regulator?
+              </span>
+              <i id="faq-4-icon" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0"></i>
+            </button>
+            <div id="faq-4" class="hidden px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
+              Common indicators of a damaged regulator include: a subtle hissing sound near the brass connection joint, a loose fit that wobbles when touched, a jammed or excessively stiff on/off rotating switch, gas odor lingering around the valve collar, or lazy, pulsating yellow flames on the stove. If any of these signs appear, stop using the gas connection immediately and request an authorized technician checkup.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition">
+            <button onclick="toggleFaq('faq-5')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
+              <span class="text-sm sm:text-base flex items-center gap-2.5">
+                <i data-lucide="help-circle" class="w-4 h-4 text-sky-500 flex-shrink-0"></i>
+                Can I repair an LPG hose myself using adhesive tape, clamps, or glue?
+              </span>
+              <i id="faq-5-icon" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0"></i>
+            </button>
+            <div id="faq-5" class="hidden px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
+              <strong>Never attempt DIY repairs on gas hoses or fittings.</strong> Adhesives, electrical insulation tapes, and industrial glues dissolve rapidly when exposed to hydrocarbon LPG vapors, and internal operating pressure will quickly blow through the tape, leading to a catastrophic gas leak. Always contact your authorized distributor for a genuine ISI-stamped Suraksha hose replacement.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 10: IMMEDIATE SUPPORT & BOOKING CTA BANNER -->
+    <section class="py-12 sm:py-16 bg-gradient-to-r from-sky-600 to-blue-700 text-white text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/15 text-white border border-white/20">
+          <i data-lucide="shield" class="w-3.5 h-3.5"></i> Certified Professional Technicians
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black tracking-tight">
+          Need a Professional Home Safety Inspection or Hose Upgrade?
+        </h2>
+        <p class="text-sm sm:text-base text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          Book a certified BlueFlame safety technician visit for just ₹199. We perform comprehensive jet decarbonization, pressure gauge calibrations, and authentic Suraksha hose installations.
+        </p>
+        <div class="pt-3 flex flex-wrap items-center justify-center gap-4">
+          <a href="services.html#stove-repair" class="px-6 py-3 rounded-xl font-bold text-sky-700 bg-white hover:bg-sky-50 shadow-lg transition flex items-center gap-2 text-sm">
+            <i data-lucide="calendar" class="w-4 h-4"></i> Book Safety Inspection Visit (₹199)
+          </a>
+          <a href="contact.html" class="px-6 py-3 rounded-xl font-bold text-white bg-sky-800/60 hover:bg-sky-800 border border-white/30 transition flex items-center gap-2 text-sm">
+            <i data-lucide="mail" class="w-4 h-4"></i> Contact Safety Desk
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RICH FOOTER WITH CLICKABLE BRAND LOGO, SOCIALS & LOCATION -->
+  <footer class="bg-slate-900 text-slate-300 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-left">
+        
+        <!-- Col 1: Brand Info & Clickable Logo -->
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center gap-3.5 group text-left">
+            <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-6 h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xl font-black tracking-tight text-white font-['Outfit']">
+                  BLUE<span class="text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[10px] font-bold rounded bg-sky-950 text-sky-300 border border-sky-400/30">LPG</span>
+              </div>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Government Authorized LPG Distribution Agency compliant with Petroleum and Explosives Safety Organization standards. Dedicated to providing dependable, clean cooking fuel and doorstep energy solutions.
+          </p>
+
+          <!-- Social Media Icons -->
+          <div class="pt-2">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Connect With Us</span>
+            <div class="flex items-center gap-3">
+              <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook Login" title="Facebook" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#1877F2] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram Login" title="Instagram" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#E4405F] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube Login" title="YouTube" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#FF0000] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition">Home1</a></li>
+            <li><a href="home2.html" class="hover:text-white transition">Home2</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="services.html" class="hover:text-white transition">Services & Refills</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Tips</a></li>
+            <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact & Branches</a></li>
+            <li><a href="dashboard.html" class="hover:text-white transition">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Consumer Services -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Services</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="services.html#new-connection" class="hover:text-white transition">Apply New Connection</a></li>
+            <li><a href="dashboard.html?tab=booking" class="hover:text-white transition">Book a Refill</a></li>
+            <li><a href="dashboard.html?tab=billing" class="hover:text-white transition">Download Tax Invoices</a></li>
+            <li><a href="services.html#stove-repair" class="hover:text-white transition">Burner Servicing</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Standards</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Desk -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Desk</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i> Office: 011-2440-9900</p>
+            <p class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-sky-400"></i> support@blueflamelpg.com</p>
+            <p class="text-[11px] text-slate-500 pt-1">Mon – Sat: 08:00 AM – 08:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Col 5: Location / Visit Us Section -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Location</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="font-semibold text-slate-200">Apex Energy Hub</p>
+            <p class="text-[11px] leading-relaxed text-slate-400">
+              14 Industrial Corridor, Sector 62,<br>
+              New Delhi, Delhi - 110001
+            </p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Apex+Energy+Hub+Sector+62+New+Delhi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 pt-1 group">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i>
+              <span>Get Directions</span>
+              <i data-lucide="external-link" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 BlueFlame LPG Gas Agency & Delivery Services Ltd. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    function setTestState(hasLeak) {
+      const bubbles = document.getElementById('sim-bubbles');
+      const safeBadge = document.getElementById('sim-safe-badge');
+      const status = document.getElementById('sim-status');
+
+      if (hasLeak) {
+        bubbles.classList.remove('hidden');
+        safeBadge.classList.add('hidden');
+        status.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 animate-pulse';
+        status.innerText = 'Expanding Bubbles: Leak Detected!';
+      } else {
+        bubbles.classList.add('hidden');
+        safeBadge.classList.remove('hidden');
+        status.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300';
+        status.innerText = '✓ Seal Tight (No Bubbles)';
+      }
+    }
+
+    function simulateLeakTest() {
+      showToast('Applying soapy water foam to cylinder valve joint...', 'info');
+      setTestState(false);
+      setTimeout(() => {
+        showToast('Observing joint for 10 seconds: Seal is 100% airtight!', 'success');
+      }, 1500);
+    }
+
+    function toggleFaq(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      if (content) {
+        const isHidden = content.classList.contains('hidden');
+        content.classList.toggle('hidden', !isHidden);
+        if (icon) {
+          icon.classList.toggle('rotate-180', isHidden);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

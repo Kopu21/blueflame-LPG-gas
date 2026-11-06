@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueFlame LPG - Trusted Gas Agency & Doorstep Delivery</title>
+  <meta name="description" content="Authorized LPG Gas Agency offering 2-hour express domestic and commercial cylinder refills, verified digital weight checks, and full safety assurance.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            flame: {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <!-- Background Image System - Light & Dark Mode Compatible -->
+  <div class="site-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=2000&q=80');" aria-hidden="true"></div>
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 glass-header bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-5 xl:px-8">
+      <div class="flex items-center justify-between lg:grid lg:grid-cols-[auto_1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-20 gap-2 lg:gap-2.5 xl:gap-4">
+        
+        <!-- LEFT SIDE – Brand Identity -->
+        <div class="flex items-center justify-start flex-shrink-0 min-w-0">
+          <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 xl:gap-3 group text-left min-w-0">
+            <div class="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-9.5 lg:h-9.5 xl:w-11 xl:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1 sm:gap-1.5">
+                <span class="text-lg sm:text-xl lg:text-xl xl:text-2xl font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] whitespace-nowrap">
+                  BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 flex-shrink-0">LPG</span>
+              </div>
+              <span class="text-[9px] sm:text-[10px] xl:text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider sm:tracking-widest leading-none whitespace-nowrap">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CENTRE – Main Navigation (Strict Order: 1. Home, 2. About, 3. Services, 4. Safety Tips, 5. Blog, 6. Dashboard, 7. Contact) -->
+        <nav class="hidden lg:flex items-center justify-center">
+          <div class="flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2">
+            
+            <!-- 1. Home (Dropdown: Home1, Home2) -->
+            <div class="relative group">
+              <button class="flex items-center gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-bold text-sky-600 dark:text-sky-400 bg-sky-50/80 dark:bg-sky-950/50 border border-sky-200/50 dark:border-sky-800/50 transition whitespace-nowrap">
+                <span>Home</span>
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+              <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-2 w-56 hidden group-hover:block group-focus-within:block z-50">
+                <div class="p-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-1.5">
+                  <a href="index.html" class="flex items-center gap-2.5 p-2 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200/60 dark:border-sky-800/60 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-sky-600 dark:text-sky-400 transition">Home1</span>
+                      <span class="text-[10px] text-slate-400">Classic Agency</span>
+                    </div>
+                  </a>
+                  <a href="home2.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home2</span>
+                      <span class="text-[10px] text-slate-400">Smart Technology</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. About -->
+            <a href="about.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              About
+            </a>
+
+            <!-- 3. Services -->
+            <a href="services.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Services
+            </a>
+
+            <!-- 4. Safety Tips -->
+            <a href="safety.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Safety Tips
+            </a>
+
+            <!-- 5. Blog -->
+            <a href="blog.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Blog
+            </a>
+
+            <!-- 6. Dashboard -->
+            <a href="dashboard.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Dashboard
+            </a>
+
+            <!-- 7. Contact -->
+            <a href="contact.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Contact
+            </a>
+
+          </div>
+        </nav>
+
+        <!-- RIGHT SIDE – Action Icons and Button in EXACT Order: 1. RTL/LTR, 2. Theme, 3. Login Icon Only, 4. Book a Gas -->
+        <div class="hidden lg:flex items-center justify-end gap-1.5 xl:gap-2.5 flex-shrink-0">
+          
+          <!-- 1. RTL/LTR toggle logo -->
+          <button onclick="toggleDirection()" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-4 h-4 dir-toggle-icon"></i>
+          </button>
+
+          <!-- 2. Dark/Light theme toggle -->
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-4 h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-toggle-icon-moon"></i>
+          </button>
+
+          <!-- 3. Consumer Login logo/icon only (NO text) -->
+          <div class="user-auth-status flex items-center flex-shrink-0">
+            <a href="login.html" aria-label="Consumer Login" title="Consumer Login Portal" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- 4. Book a Gas button -->
+          <a href="dashboard.html?tab=booking" class="px-2.5 xl:px-4 py-2 rounded-xl text-xs xl:text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-md shadow-sky-500/20 hover:shadow-sky-500/30 transition flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-sky-200"></i>
+            <span>Book a Gas</span>
+          </a>
+
+        </div>
+
+        <!-- Mobile/Tablet Trigger (< lg) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 lg:hidden flex-shrink-0">
+          <button onclick="toggleDirection()" aria-label="Toggle Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4 dir-toggle-icon"></i>
+          </button>
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-moon"></i>
+          </button>
+          <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" title="Menu" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer with All 7 Items + Accessible Controls & Book a Gas -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-4 pb-6 space-y-3">
+      <div class="flex flex-col space-y-1">
+        <div class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">Homepages</div>
+        <div class="grid grid-cols-2 gap-2 px-1 mb-2">
+          <a href="index.html" class="flex items-center gap-2 p-2 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200/80 dark:border-sky-800/80">
+            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Home1</span>
+          </a>
+          <a href="home2.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Home2</span>
+          </a>
+        </div>
+        <a href="about.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+        <a href="services.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Services</a>
+        <a href="safety.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Safety Tips</a>
+        <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Blog</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
+        <a href="contact.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between px-3">
+          <span class="text-xs font-semibold text-slate-500">Consumer Login</span>
+          <a href="login.html" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+            <i data-lucide="user" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+      <div class="pt-2">
+        <a href="dashboard.html?tab=booking" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-center text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 shadow-md">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>Book a Gas</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-slate-100 via-sky-50/40 to-slate-50 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-950 border-b border-slate-200/60 dark:border-slate-800/80">
+      
+      <!-- High-Quality Domestic LPG Supply & Clean Cooking Flame Hero Background -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/home1-hero-bg.jpg" 
+             alt="Modern domestic kitchen with clean blue cooking flame" 
+             class="w-full h-full object-cover object-center opacity-20 dark:opacity-15 filter brightness-105 contrast-105">
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/70 dark:from-slate-950/95 dark:via-slate-950/85 dark:to-slate-900/70"></div>
+      </div>
+
+      <!-- Subtle Decorative Atmospheric Glows -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-sky-400/20 dark:bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-cyan-400/20 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column: Copy & Value Proposition -->
+          <div class="lg:col-span-7 space-y-6 text-left">
+            
+            <!-- Delivery Promise Highlight Badge -->
+            <div class="inline-flex max-w-full items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-bold bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 border border-sky-300/60 dark:border-sky-800 shadow-sm text-left">
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+              </span>
+              <span>Our Delivery Promise: Doorstep Delivery Within 2 Hours Guaranteed</span>
+            </div>
+
+            <!-- Main Heading with Proper Typographic Hierarchy -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+              Reliable <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-cyan-500">LPG Cylinder</span> Delivery & Full Safety Assurance
+            </h1>
+
+            <!-- Supporting Paragraph -->
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-normal">
+              Empowering 45,000+ homes & businesses with uninterrupted, clean flame energy. Enjoy hassle-free 1-click refill bookings, verified digital weight checks at your door, tamper-proof seals, and dedicated customer service.
+            </p>
+
+            <!-- Key Feature Badges Row -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
+              <div class="p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-sky-100 dark:bg-sky-900/60 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="scale" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white">100% Weight Check</h4>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Electronic scale verification</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white">O-Ring Inspected</h4>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Zero-leakage guarantee</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 shadow-sm flex items-center gap-3 col-span-2 sm:col-span-1">
+                <div class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/60 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white">Express 2-Hr Slot</h4>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Priority local dispatch</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA Actions -->
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-start gap-4">
+              <a href="dashboard.html?tab=booking" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-base font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-xl shadow-sky-600/30 hover:shadow-2xl transition duration-200">
+                <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                <span>Book A Refill Cylinder</span>
+              </a>
+
+              <a href="services.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                <i data-lucide="layers" class="w-5 h-5 text-sky-500"></i>
+                <span>Explore Services</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Quick Refill Card + HD Visual -->
+          <div class="lg:col-span-5">
+            <div class="relative">
+              
+              <!-- Background card styling -->
+              <div class="p-6 sm:p-8 rounded-3xl bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800/90 shadow-2xl backdrop-blur-xl relative z-10 space-y-6">
+                
+                <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+                  <div class="text-left">
+                    <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider">Fast Refill Desk</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Quick Gas Refill Booking</h3>
+                  </div>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Slots Open
+                  </span>
+                </div>
+
+                <!-- HD Clean Stove / Modern Kitchen Card Banner (Unique Image 1) -->
+                <div class="relative h-44 rounded-2xl overflow-hidden shadow-inner group">
+                  <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80" 
+                       alt="Modern hygienic kitchen with clean blue flame cooking" 
+                       class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-4">
+                    <div class="text-left">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500 text-white uppercase tracking-wider">Zero Contamination</span>
+                      <p class="text-xs font-medium text-white/90 mt-1">High-pressure inspected domestic & commercial cylinders</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fast Input Form -->
+                <form onsubmit="handleQuickRefill(event)" class="space-y-4 text-left">
+                  <div>
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5">
+                      Consumer Number / Registered Mobile
+                    </label>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                        <i data-lucide="user" class="w-4 h-4"></i>
+                      </div>
+                      <input type="text" id="quick-consumer-id" required placeholder="e.g. 9876543210 or LPG-8842-991" 
+                             class="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="quick-cylinder-type" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5">
+                      Select Cylinder Type <span class="text-rose-500">*</span>
+                    </label>
+                    <div class="relative">
+                      <select id="quick-cylinder-type" required class="w-full px-3 py-2.5 rounded-xl text-sm bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        <option value="">-- Select Cylinder Type --</option>
+                        <option value="Domestic LPG Cylinder – 14.2 KG">Domestic LPG Cylinder – 14.2 KG</option>
+                        <option value="Commercial LPG Cylinder – 19 KG">Commercial LPG Cylinder – 19 KG</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between pt-1">
+                    <span class="text-xs text-slate-500 dark:text-slate-400">DBTL Direct Subsidy applied</span>
+                    <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400">Save ₹240 with Govt Subsidy</span>
+                  </div>
+
+                  <button type="submit" class="w-full py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-sky-600 via-blue-600 to-sky-700 hover:from-sky-500 hover:to-blue-600 shadow-md transition flex items-center justify-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                    <span>Proceed to Refill Booking</span>
+                  </button>
+                </form>
+
+                <div class="pt-2 text-center text-xs text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800">
+                  Manage orders and bookings in <a href="dashboard.html" class="text-sky-600 dark:text-sky-400 font-bold hover:underline">Dashboard →</a>
+                </div>
+
+              </div>
+
+              <!-- Decorative Badge -->
+              <div class="absolute -bottom-4 -left-4 z-20 bg-amber-500 text-white px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2 font-bold text-xs">
+                <i data-lucide="award" class="w-4 h-4"></i>
+                <span>#1 Rated LPG Agency 2026</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: OUR 5-POINT DELIVERY PROMISE -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-50 dark:bg-sky-950/80 px-3 py-1 rounded-full border border-sky-200 dark:border-sky-800">
+            Uncompromising Standards
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            The BlueFlame 5-Point Delivery Promise
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            We don't just drop off gas cylinders. Every single delivery adheres to our strict safety, weight, and timing charter to safeguard your family and business.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Promise 1 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between">
+            <div class="space-y-4 text-left">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">1. Verified Doorstep Weight Check</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Our delivery personnel carry certified digital hanging scales. You can demand a live pre-delivery weight check before accepting the cylinder to ensure full 14.2 kg net gas.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-sky-600 dark:text-sky-400">Net Gas Weight: 14.2 kg</span>
+              <span>Tolerance: ±50 gm</span>
+            </div>
+          </div>
+
+          <!-- Promise 2 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between">
+            <div class="space-y-4 text-left">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <i data-lucide="lock" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">2. Tamper-Proof Hologram Seal</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Every cylinder cap is protected by high-security heat-shrink holographic film with a unique QR code. Broken seal? We replace the cylinder immediately at zero cost.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-emerald-600 dark:text-emerald-400">100% Genuine Bottling</span>
+              <span>QR Verified</span>
+            </div>
+          </div>
+
+          <!-- Promise 3 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between">
+            <div class="space-y-4 text-left">
+              <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                <i data-lucide="clock" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">3. 2-Hour Express Delivery</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Ran out of gas while cooking dinner? Select our Express Delivery slot. Our eco-friendly EV delivery fleet navigates local streets to arrive within 120 minutes.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-amber-600 dark:text-amber-400">On-Time Or ₹50 Credit</span>
+              <span>Fast Dispatch</span>
+            </div>
+          </div>
+
+          <!-- Promise 4 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between">
+            <div class="space-y-4 text-left">
+              <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">4. Free O-Ring & Leak Test</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Our trained delivery agent checks the rubber O-ring inside the cylinder valve and performs a soap solution bubble test to certify zero gas leakage before departure.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-rose-600 dark:text-rose-400">Free Safety Check</span>
+              <span>Zero Leakage</span>
+            </div>
+          </div>
+
+          <!-- Promise 5 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between">
+            <div class="space-y-4 text-left">
+              <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                <i data-lucide="banknote" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">5. Direct Subsidy & Instant Tax Bill</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Govt DBTL direct benefit subsidy is instantly triggered to your bank account upon delivery. Digital GST tax invoice sent directly to your phone & downloadable anytime.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-purple-600 dark:text-purple-400">Direct Bank Transfer</span>
+              <span>Instant GST Bill</span>
+            </div>
+          </div>
+
+          <!-- Promise 6: Dedicated Customer Support -->
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-600 to-blue-700 text-white shadow-xl flex flex-col justify-between">
+            <div class="space-y-4 text-left">
+              <div class="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center">
+                <i data-lucide="headphones" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold">Priority Customer Assistance</h3>
+              <p class="text-sm text-sky-100 leading-relaxed">
+                Have a query about your connection, billing, or technician visits? Our dedicated agency desk is available with fast resolution.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/20 flex items-center justify-between text-xs font-bold text-white">
+              <span>Customer Desk</span>
+              <a href="contact.html" class="px-3 py-1 bg-white text-sky-700 rounded-lg hover:bg-sky-50 transition">
+                Contact Us →
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: CYLINDER VARIETIES & PRICING -->
+    <section class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-100 dark:bg-sky-950 px-3 py-1 rounded-full">
+            Product Catalog
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            LPG Cylinders Tailored For Every Need
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Select the cylinder specification suited for your household, modular kitchen, commercial kitchen, or travel.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+          
+          <!-- Card 1: 14.2kg Standard Steel (Unique Image 2) -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group lpg-card-lift">
+            <div class="p-5 space-y-4">
+              <div class="relative h-44 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img src="assets/images/cylinder-14kg-domestic.jpg" 
+                     alt="Standard 14.2kg Domestic Red Steel LPG Cylinder" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500 lpg-cylinder-animate">
+                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-sky-600 text-white">
+                  Most Popular
+                </span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">14.2 kg Domestic Steel</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Standard household red steel cylinder</p>
+              </div>
+              <div class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex justify-between"><span>Tare Weight:</span> <span class="font-bold">15.4 kg</span></div>
+                <div class="flex justify-between"><span>Net LPG Weight:</span> <span class="font-bold">14.2 kg</span></div>
+                <div class="flex justify-between"><span>Gross Weight:</span> <span class="font-bold">29.6 kg</span></div>
+                <div class="flex justify-between text-emerald-600 dark:text-emerald-400 font-semibold"><span>Govt Subsidy:</span> <span>₹240.00</span></div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <div class="flex items-baseline justify-between mb-3">
+                <div>
+                  <span class="text-2xl font-black text-slate-900 dark:text-white">₹853</span>
+                  <span class="text-xs text-slate-400">/refill</span>
+                </div>
+                <span class="text-xs font-semibold text-emerald-600">Net: ₹613</span>
+              </div>
+              <a href="dashboard.html?tab=booking" class="w-full py-2.5 rounded-xl text-xs font-bold text-center block text-white bg-sky-600 hover:bg-sky-500 transition shadow">
+                Book This Cylinder
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: 10kg Composite Smart (Unique Image 3) -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border-2 border-sky-500/80 dark:border-sky-500/60 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group lpg-card-lift">
+            <span class="absolute top-0 right-0 bg-sky-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-wider">
+              Smart Tech
+            </span>
+            <div class="p-5 space-y-4">
+              <div class="relative h-44 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img src="assets/images/cylinder-10kg-composite.jpg" 
+                     alt="Smart Composite 10kg lightweight translucent gas cylinder" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500 lpg-cylinder-animate">
+                <span class="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white">
+                  Rust-Free & Translucent
+                </span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">10 kg Composite Cylinder</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">See gas level through translucent body</p>
+              </div>
+              <div class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex justify-between"><span>Tare Weight:</span> <span class="font-bold text-sky-600">Only 5.2 kg!</span></div>
+                <div class="flex justify-between"><span>Net LPG Weight:</span> <span class="font-bold">10.0 kg</span></div>
+                <div class="flex justify-between"><span>Explosion-Proof:</span> <span class="font-bold text-emerald-600">100% Certified</span></div>
+                <div class="flex justify-between text-emerald-600 dark:text-emerald-400 font-semibold"><span>Govt Subsidy:</span> <span>₹180.00</span></div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <div class="flex items-baseline justify-between mb-3">
+                <div>
+                  <span class="text-2xl font-black text-slate-900 dark:text-white">₹690</span>
+                  <span class="text-xs text-slate-400">/refill</span>
+                </div>
+                <span class="text-xs font-semibold text-emerald-600">Net: ₹510</span>
+              </div>
+              <a href="dashboard.html?tab=booking" class="w-full py-2.5 rounded-xl text-xs font-bold text-center block text-white bg-sky-600 hover:bg-sky-500 transition shadow">
+                Book Composite Cylinder
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: 5kg Chhotu Mini (Unique Image 4) -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group lpg-card-lift">
+            <div class="p-5 space-y-4">
+              <div class="relative h-44 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img src="assets/images/cylinder-5kg-chhotu.jpg" 
+                     alt="5kg Chhotu convenient mini portable cylinder" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500 lpg-cylinder-animate">
+                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500 text-white">
+                  No Address Proof Req.
+                </span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">5 kg Chhotu Mini Refill</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Ideal for students, bachelors & outdoor</p>
+              </div>
+              <div class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex justify-between"><span>Tare Weight:</span> <span class="font-bold">4.8 kg</span></div>
+                <div class="flex justify-between"><span>Net LPG Weight:</span> <span class="font-bold">5.0 kg</span></div>
+                <div class="flex justify-between"><span>Portability:</span> <span class="font-bold">Ultra Compact</span></div>
+                <div class="flex justify-between"><span>Instant Handover:</span> <span class="font-bold text-emerald-600">Zero KYC</span></div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <div class="flex items-baseline justify-between mb-3">
+                <div>
+                  <span class="text-2xl font-black text-slate-900 dark:text-white">₹345</span>
+                  <span class="text-xs text-slate-400">/refill</span>
+                </div>
+                <span class="text-xs font-semibold text-slate-500">Non-Subsidized</span>
+              </div>
+              <a href="dashboard.html?tab=booking" class="w-full py-2.5 rounded-xl text-xs font-bold text-center block text-white bg-slate-800 hover:bg-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 transition shadow">
+                Order 5kg Mini
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: 19kg Commercial Jumbo (Unique Image 5) -->
+          <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group lpg-card-lift">
+            <div class="p-5 space-y-4">
+              <div class="relative h-44 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img src="assets/images/cylinder-19kg-commercial.jpg" 
+                     alt="19kg Commercial Blue LPG cylinder for hotels and restaurants" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500 lpg-cylinder-animate">
+                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-700 text-white">
+                  Hotels & Cafes
+                </span>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">19 kg Commercial Blue</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Heavy-duty commercial kitchens</p>
+              </div>
+              <div class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex justify-between"><span>Tare Weight:</span> <span class="font-bold">18.2 kg</span></div>
+                <div class="flex justify-between"><span>Net LPG Weight:</span> <span class="font-bold">19.0 kg</span></div>
+                <div class="flex justify-between"><span>High Pressure Flow:</span> <span class="font-bold text-sky-600">VOT/LOT Type</span></div>
+                <div class="flex justify-between"><span>GST Input Credit:</span> <span class="font-bold text-emerald-600">18% ITC</span></div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <div class="flex items-baseline justify-between mb-3">
+                <div>
+                  <span class="text-2xl font-black text-slate-900 dark:text-white">₹1,680</span>
+                  <span class="text-xs text-slate-400">/refill</span>
+                </div>
+                <span class="text-xs font-semibold text-sky-600">Bulk Discounts</span>
+              </div>
+              <a href="dashboard.html?tab=booking" class="w-full py-2.5 rounded-xl text-xs font-bold text-center block text-white bg-blue-600 hover:bg-blue-500 transition shadow">
+                Order Commercial Jumbo
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: CUSTOMER REVIEWS & TRUST TESTIMONIALS -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+          <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest bg-sky-50 dark:bg-sky-950 px-3 py-1 rounded-full">
+            Real Experiences
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Trusted By 45,000+ Happy Households
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Read how our punctuality, digital weight checks, and courteous safety inspections create complete peace of mind.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          
+          <!-- Review 1 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 space-y-4">
+            <div class="flex items-center gap-1 text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+              "The 2-hour express delivery is a lifesaver! Our gas got exhausted right while preparing lunch for guests on Sunday. Booked on BlueFlame and the cylinder was connected in 65 minutes flat with live scale weight verification."
+            </p>
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-700/60 flex items-center gap-3">
+              <img src="assets/images/testimonial-ananya.jpg" alt="Ananya Kapoor" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700 shadow-sm flex-shrink-0">
+              <div>
+                <h5 class="text-sm font-bold text-slate-900 dark:text-white">Ananya Kapoor</h5>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Vasant Kunj, New Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 space-y-4">
+            <div class="flex items-center gap-1 text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+              "I switched to their 10kg composite cylinder last month. It doesn't leave rust marks on the kitchen tiles and is so light that my mother can easily slide it. The consumer portal invoice download is super smooth."
+            </p>
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-700/60 flex items-center gap-3">
+              <img src="assets/images/testimonial-rajesh.jpg" alt="Rajesh Singhania" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700 shadow-sm flex-shrink-0">
+              <div>
+                <h5 class="text-sm font-bold text-slate-900 dark:text-white">Rajesh Singhania</h5>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Gomti Nagar, Lucknow</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 space-y-4">
+            <div class="flex items-center gap-1 text-amber-400">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+              "We run a busy Italian bistro requiring four 19kg commercial cylinders every week. BlueFlame's dedicated morning delivery schedule and automated GST invoices make our restaurant operations completely seamless."
+            </p>
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-700/60 flex items-center gap-3">
+              <img src="assets/images/testimonial-marco-priya.jpg" alt="Chef Marco & Priya" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700 shadow-sm flex-shrink-0">
+              <div>
+                <h5 class="text-sm font-bold text-slate-900 dark:text-white">Chef Marco & Priya</h5>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Bella Cucina Bistro, Pune</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RICH FULL FOOTER WITH CLICKABLE BRAND LOGO & EXACT 3 SOCIAL ICONS -->
+  <footer class="bg-slate-900 text-slate-300 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-left">
+        
+        <!-- Col 1: Brand Info & Clickable Logo -->
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center gap-3.5 group text-left">
+            <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-6 h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xl font-black tracking-tight text-white font-['Outfit']">
+                  BLUE<span class="text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[10px] font-bold rounded bg-sky-950 text-sky-300 border border-sky-400/30">LPG</span>
+              </div>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Government Authorized LPG Distribution Agency compliant with Petroleum and Explosives Safety Organization standards. Dedicated to providing dependable, clean cooking fuel and doorstep energy solutions.
+          </p>
+
+          <!-- Social Media Icons -->
+          <div class="pt-2">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Connect With Us</span>
+            <div class="flex items-center gap-3">
+              <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook Login" title="Facebook" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#1877F2] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram Login" title="Instagram" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#E4405F] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube Login" title="YouTube" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#FF0000] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition">Home1</a></li>
+            <li><a href="home2.html" class="hover:text-white transition">Home2</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="services.html" class="hover:text-white transition">Services & Refills</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Tips</a></li>
+            <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact & Branches</a></li>
+            <li><a href="dashboard.html" class="hover:text-white transition">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Consumer Services -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Services</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="services.html#new-connection" class="hover:text-white transition">Apply New Connection</a></li>
+            <li><a href="dashboard.html?tab=booking" class="hover:text-white transition">Book a Refill</a></li>
+            <li><a href="dashboard.html?tab=billing" class="hover:text-white transition">Download Tax Invoices</a></li>
+            <li><a href="services.html#stove-repair" class="hover:text-white transition">Burner Servicing</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Standards</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Desk -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Desk</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i> Office: 011-2440-9900</p>
+            <p class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-sky-400"></i> support@blueflamelpg.com</p>
+            <p class="text-[11px] text-slate-500 pt-1">Mon – Sat: 08:00 AM – 08:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Col 5: Location / Visit Us Section -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Location</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="font-semibold text-slate-200">Apex Energy Hub</p>
+            <p class="text-[11px] leading-relaxed text-slate-400">
+              14 Industrial Corridor, Sector 62,<br>
+              New Delhi, Delhi - 110001
+            </p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Apex+Energy+Hub+Sector+62+New+Delhi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 pt-1 group">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i>
+              <span>Get Directions</span>
+              <i data-lucide="external-link" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 BlueFlame LPG Gas Agency & Delivery Services Ltd. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    function handleQuickRefill(e) {
+      e.preventDefault();
+      const consumerId = document.getElementById('quick-consumer-id').value.trim();
+      const cyl = document.getElementById('quick-cylinder-type').value;
+
+      if (!cyl) {
+        showToast('Please select a Cylinder Type (Domestic 14.2 KG or Commercial 19 KG).', 'error');
+        document.getElementById('quick-cylinder-type').focus();
+        return;
+      }
+
+      localStorage.setItem('lpg_preselected_cylinder', cyl);
+      if (consumerId) localStorage.setItem('lpg_preselected_consumer_id', consumerId);
+
+      let user = JSON.parse(localStorage.getItem('lpg_auth_user') || 'null');
+      if (!user) {
+        user = {
+          name: "Vikramaditya Sharma",
+          consumerId: consumerId || "LPG-8842-991",
+          phone: "+91 98765-43210"
+        };
+        localStorage.setItem('lpg_auth_user', JSON.stringify(user));
+      }
+      
+      showToast(`Cylinder '${cyl}' selected. Loading Booking Portal...`, 'info');
+      setTimeout(() => {
+        window.location.href = `dashboard.html?tab=booking&cylinder=${encodeURIComponent(cyl)}&consumerId=${encodeURIComponent(consumerId)}`;
+      }, 500);
+    }
+  </script>
+</body>
+</html>
