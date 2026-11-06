@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Dashboard - BlueFlame LPG Gas Portal</title>
+  <meta name="description" content="LPG Consumer Self-Service Dashboard for refill booking, live driver tracking, invoice downloads, and DBTL subsidy management.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sky-500 selection:text-white relative">
+
+  <!-- Subtle Distinct Application Background Texture -->
+  <div class="site-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80'); opacity: 0.04;" aria-hidden="true"></div>
+
+  <!-- 1. DEDICATED TOP DASHBOARD TOOLBAR (Requirement 4: Separate Top Toolbar) -->
+  <header class="w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-2 sm:gap-4 py-3">
+      
+      <!-- Left: Brand Logo, Name & Dashboard Badge -->
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <!-- Mobile Sidebar Toggle -->
+        <button onclick="toggleDashboardSidebar()" aria-label="Toggle Dashboard Menu" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
+        </button>
+
+        <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 group min-w-0">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-sky-600 to-blue-600 flex items-center justify-center text-white shadow-md shadow-sky-500/20 flex-shrink-0">
+            <i data-lucide="flame" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center gap-1 sm:gap-1.5">
+              <span class="text-sm sm:text-base lg:text-lg font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] whitespace-nowrap">
+                BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
+              </span>
+              <span class="px-1.5 py-0.5 text-[8.5px] sm:text-[9px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 uppercase flex-shrink-0">
+                Portal
+              </span>
+            </div>
+            <span class="text-[9px] sm:text-[10px] text-slate-400 font-medium truncate">Consumer Account</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Right: Consumer Profile Information & Controls -->
+      <div class="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
+        
+        <!-- Consumer Account Pill -->
+        <div class="hidden md:flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/80 dark:bg-emerald-950/40 text-xs text-emerald-800 dark:text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-medium">Domestic 14.2kg | ID: <strong id="topbar-consumer-id">LPG-8842-991</strong></span>
+        </div>
+
+        <!-- Quick Book Button -->
+        <button onclick="switchTab('tab-booking')" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-sm transition">
+          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+          <span>Book Refill</span>
+        </button>
+
+        <!-- RTL / LTR Direction Toggle -->
+        <button onclick="toggleDirection()" aria-label="Toggle Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+          <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4 dir-toggle-icon"></i>
+        </button>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+          <i data-lucide="sun" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-sun"></i>
+          <i data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-moon"></i>
+        </button>
+
+        <!-- Profile Avatar Pill -->
+        <div class="flex items-center gap-1.5 sm:gap-2 pl-1.5 sm:pl-2 border-l border-slate-200 dark:border-slate-800 flex-shrink-0">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white text-xs font-black shadow-sm flex-shrink-0">
+            VS
+          </div>
+          <div class="hidden xl:flex flex-col text-left">
+            <span id="topbar-user-name" class="text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight">Vikramaditya Sharma</span>
+            <span class="text-[10px] text-slate-400">Verified Consumer</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 2. MAIN APPLICATION CONTAINER (Sidebar + Dynamic Main Content) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow flex flex-col lg:flex-row gap-6">
+
+    <!-- DASHBOARD SIDEBAR (Requirement 4: Dedicated Dashboard Sidebar with 8 Items) -->
+    <aside id="dashboard-sidebar" class="w-full lg:w-64 flex-shrink-0 space-y-4 hidden lg:block">
+      
+      <!-- Consumer Account Card -->
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-sm">
+            <i data-lucide="user-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 id="sidebar-user-name" class="text-sm font-bold text-slate-900 dark:text-white leading-tight">Vikramaditya Sharma</h2>
+            <p id="sidebar-consumer-id" class="text-xs text-slate-400 font-mono">LPG-8842-991</p>
+          </div>
+        </div>
+        <div class="pt-2.5 border-t border-slate-100 dark:border-slate-800 grid grid-cols-2 gap-2 text-[11px]">
+          <div>
+            <span class="text-slate-400 block">Subsidy:</span>
+            <span class="text-emerald-600 dark:text-emerald-400 font-bold">✓ DBTL Linked</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block">SV Status:</span>
+            <span class="text-sky-600 dark:text-sky-400 font-bold">Active Subsidized</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Navigation Menu (All 8 Items in Exact Order) -->
+      <nav class="p-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-1 text-left">
+        
+        <!-- 1. Overview -->
+        <button onclick="switchTab('tab-overview')" id="nav-tab-overview" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/60 border border-sky-200/60 dark:border-sky-800/60 transition">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span>Overview</span>
+        </button>
+
+        <!-- 2. Book New Refill -->
+        <button onclick="switchTab('tab-booking')" id="nav-tab-booking" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>Book New Refill</span>
+        </button>
+
+        <!-- 3. Track Delivery -->
+        <button onclick="switchTab('tab-tracking')" id="nav-tab-tracking" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <i data-lucide="truck" class="w-4 h-4"></i>
+          <span class="flex-grow text-left">Track Delivery</span>
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+        </button>
+
+        <!-- 4. Booking History -->
+        <button onclick="switchTab('tab-history')" id="nav-tab-history" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Booking History</span>
+        </button>
+
+        <!-- 5. Billing & Payments -->
+        <button onclick="switchTab('tab-billing')" id="nav-tab-billing" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <i data-lucide="receipt" class="w-4 h-4"></i>
+          <span>Billing & Payments</span>
+        </button>
+
+        <!-- 6. My Profile -->
+        <button onclick="switchTab('tab-profile')" id="nav-tab-profile" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>My Profile</span>
+        </button>
+
+        <!-- 7. Support -->
+        <button onclick="switchTab('tab-support')" id="nav-tab-support" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <i data-lucide="headphones" class="w-4 h-4"></i>
+          <span>Support</span>
+        </button>
+
+        <!-- 8. Logout -->
+        <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
+          <button onclick="logoutUser()" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+
+      </nav>
+
+      <!-- Return to Public Website Link -->
+      <div class="p-3.5 rounded-2xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 text-center text-xs space-y-2">
+        <span class="text-slate-400 block">Want to explore public pages?</span>
+        <a href="index.html" class="inline-flex items-center gap-1.5 font-bold text-sky-600 dark:text-sky-400 hover:underline">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Return to Homepage</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT (Requirement 4: Overview, Book Refill, Track Delivery, History, Billing, Profile, Support) -->
+    <main class="flex-1 min-w-0 space-y-6">
+
+      <!-- ================= 1. TAB: OVERVIEW ================= -->
+      <section id="tab-overview" class="space-y-6 block">
+        
+        <!-- Welcome Banner -->
+        <div class="p-6 rounded-3xl bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700 text-white shadow-lg relative overflow-hidden text-left">
+          <div class="relative z-10 space-y-2">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+              <span>Active Subsidized Consumer Profile</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black font-['Outfit']">
+              Welcome back, <span id="welcome-user-name">Vikramaditya Sharma</span>!
+            </h1>
+            <p class="text-sm text-sky-100 max-w-2xl">
+              Your domestic refill order <strong>ORD-994821</strong> is currently out for delivery. Real-time updates and invoices are accessible below.
+            </p>
+          </div>
+          <div class="absolute -right-6 -bottom-8 opacity-15 pointer-events-none">
+            <i data-lucide="flame" class="w-48 h-48"></i>
+          </div>
+        </div>
+
+        <!-- Consumer Account Summary Cards (4 Metrics) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 text-left">
+          
+          <!-- Summary Card 1: Connection Type -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span>LPG Connection</span>
+              <div class="w-8 h-8 rounded-lg bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center">
+                <i data-lucide="shield" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-xl font-black text-slate-900 dark:text-white">14.2 kg Domestic</div>
+            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+              <span>Quota: 8 of 12 Refills Left</span>
+            </p>
+          </div>
+
+          <!-- Summary Card 2: Current Booking Status -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span>Current Booking Status</span>
+              <div class="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                <i data-lucide="truck" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-xl font-black text-slate-900 dark:text-white">Out for Delivery</div>
+            <p class="text-xs text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+              <span>Arriving within 45 mins</span>
+            </p>
+          </div>
+
+          <!-- Summary Card 3: DBTL Subsidy -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span>Subsidy Transferred</span>
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <i data-lucide="credit-card" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-xl font-black text-slate-900 dark:text-white">₹240.00</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Credited to HDFC Bank ****4491</p>
+          </div>
+
+          <!-- Summary Card 4: Safety Certificate -->
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+            <div class="flex items-center justify-between text-slate-400 text-xs">
+              <span>Safety Check</span>
+              <div class="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="text-xl font-black text-slate-900 dark:text-white">Inspection Safe</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Next Due: Dec 2026</p>
+          </div>
+
+        </div>
+
+        <!-- Latest Booking Details Card -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 text-left">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Live Active Order</span>
+              <h2 class="text-lg font-bold text-slate-900 dark:text-white">Refill Order #ORD-994821</h2>
+            </div>
+            <button onclick="switchTab('tab-tracking')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 hover:bg-sky-100 transition">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span>Open Live Tracker</span>
+            </button>
+          </div>
+
+          <!-- Interactive Progress Steps -->
+          <div class="grid grid-cols-4 gap-2 pt-2 text-center text-xs">
+            <div class="space-y-1">
+              <div class="w-7 h-7 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
+              <span class="font-bold text-slate-700 dark:text-slate-300 block">Booked</span>
+              <span class="text-[10px] text-slate-400">08:30 AM</span>
+            </div>
+            <div class="space-y-1">
+              <div class="w-7 h-7 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
+              <span class="font-bold text-slate-700 dark:text-slate-300 block">Inspected</span>
+              <span class="text-[10px] text-slate-400">09:15 AM</span>
+            </div>
+            <div class="space-y-1">
+              <div class="w-7 h-7 mx-auto rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
+              <span class="font-bold text-slate-700 dark:text-slate-300 block">Dispatched</span>
+              <span class="text-[10px] text-slate-400">10:00 AM</span>
+            </div>
+            <div class="space-y-1">
+              <div class="w-7 h-7 mx-auto rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold animate-bounce">🚚</div>
+              <span class="font-bold text-amber-600 dark:text-amber-400 block">Out for Delivery</span>
+              <span class="text-[10px] text-slate-400">Arriving Soon</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
+            <div>
+              <span class="text-slate-400 block">Delivery Associate:</span>
+              <span class="font-bold text-slate-800 dark:text-slate-200">Rameshwar Yadav (EV Vehicle DL-4C-9821)</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Delivery Verification OTP:</span>
+              <span class="font-mono font-black text-lg text-sky-600 dark:text-sky-400 tracking-widest">5824</span>
+            </div>
+            <a href="tel:+919811294812" class="px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 font-bold text-slate-700 dark:text-slate-200 hover:text-sky-600 flex items-center gap-1.5 justify-center">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+              <span>Call Driver</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Recent Transactions Table (Overview Content) -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 text-left">
+          <div class="flex items-center justify-between">
+            <h2 class="text-base font-bold text-slate-900 dark:text-white">Recent Refill Transactions</h2>
+            <button onclick="switchTab('tab-billing')" class="text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline">
+              View All Invoices →
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-400 font-bold uppercase tracking-wider">
+                  <th class="py-2.5">Order ID</th>
+                  <th class="py-2.5">Date</th>
+                  <th class="py-2.5">Cylinder Type</th>
+                  <th class="py-2.5">Gross Amount</th>
+                  <th class="py-2.5">Subsidy</th>
+                  <th class="py-2.5">Net Paid</th>
+                  <th class="py-2.5">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr>
+                  <td class="py-3 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-994821</td>
+                  <td class="py-3 text-slate-600 dark:text-slate-300">Today, 08:30 AM</td>
+                  <td class="py-3 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Standard</td>
+                  <td class="py-3 font-semibold">₹853.00</td>
+                  <td class="py-3 text-emerald-600 font-semibold">- ₹240.00</td>
+                  <td class="py-3 font-bold text-slate-900 dark:text-white">₹613.00</td>
+                  <td class="py-3"><span class="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold text-[10px]">In Transit</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-881920</td>
+                  <td class="py-3 text-slate-600 dark:text-slate-300">14 Oct 2026</td>
+                  <td class="py-3 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Standard</td>
+                  <td class="py-3 font-semibold">₹853.00</td>
+                  <td class="py-3 text-emerald-600 font-semibold">- ₹240.00</td>
+                  <td class="py-3 font-bold text-slate-900 dark:text-white">₹613.00</td>
+                  <td class="py-3"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Delivered</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-774120</td>
+                  <td class="py-3 text-slate-600 dark:text-slate-300">12 Sep 2026</td>
+                  <td class="py-3 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Standard</td>
+                  <td class="py-3 font-semibold">₹853.00</td>
+                  <td class="py-3 text-emerald-600 font-semibold">- ₹240.00</td>
+                  <td class="py-3 font-bold text-slate-900 dark:text-white">₹613.00</td>
+                  <td class="py-3"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Delivered</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= 2. TAB: BOOK NEW REFILL (Requirement 1: Complete Functional Form) ================= -->
+      <section id="tab-booking" class="space-y-6 hidden">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Refill Requisition Portal</span>
+            <h2 class="text-xl font-black text-slate-900 dark:text-white font-['Outfit']">Book a Gas – LPG Refill Booking</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Complete the verified booking details below. Cylinder type selection determines safety inspection and billing quota.</p>
+          </div>
+
+          <form id="refill-booking-form" onsubmit="submitRefillBooking(event)" class="space-y-5">
+            
+            <!-- 1. Consumer Identification (Grid) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Consumer ID / Registered Mobile Number -->
+              <div>
+                <label for="book-consumer-id" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Consumer ID / Registered Mobile Number <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="book-consumer-id" 
+                  required 
+                  value="LPG-8842-991"
+                  placeholder="e.g. LPG-8842-991 or 9876543210"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+              </div>
+
+              <!-- Consumer Name -->
+              <div>
+                <label for="book-consumer-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Consumer Name <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="book-consumer-name" 
+                  name="consumerName"
+                  data-validate="name"
+                  pattern="^[A-Za-z\s]+$"
+                  title="Please enter letters and spaces only"
+                  required 
+                  value="Vikramaditya Sharma"
+                  placeholder="Enter full name as on SV Voucher"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+              </div>
+            </div>
+
+            <!-- 2. Cylinder Type Dropdown (Requirement 1: Properly functioning dropdown with exact options) -->
+            <div class="space-y-1.5">
+              <label for="book-cylinder-type" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                Cylinder Type <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative">
+                <select 
+                  id="book-cylinder-type" 
+                  name="cylinderType" 
+                  required 
+                  onchange="updateBookingCalculation()"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-sky-500/60 dark:border-sky-500/60 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none pr-10 cursor-pointer shadow-sm"
+                >
+                  <option value="">-- Select Cylinder Type --</option>
+                  <option value="Domestic LPG Cylinder – 14.2 KG" selected>Domestic LPG Cylinder – 14.2 KG</option>
+                  <option value="Commercial LPG Cylinder – 19 KG">Commercial LPG Cylinder – 19 KG</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-sky-600 dark:text-sky-400">
+                  <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </div>
+              </div>
+              <p class="text-[11px] text-slate-400">
+                • <strong>Domestic (14.2 KG):</strong> Subsidized domestic household supply (₹853.00, ₹240.00 DBTL credit)<br>
+                • <strong>Commercial (19 KG):</strong> Commercial hospitality & industrial cylinder (₹1,780.00, non-subsidized)
+              </p>
+            </div>
+
+            <!-- 3. Quantity, Booking Date, and Contact Number (3 Columns) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- Quantity -->
+              <div>
+                <label for="book-qty" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Quantity <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="number" 
+                  id="book-qty" 
+                  required 
+                  min="1" 
+                  max="5" 
+                  value="1" 
+                  onchange="updateBookingCalculation()"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+              </div>
+
+              <!-- Booking Date -->
+              <div>
+                <label for="book-date" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Booking Date <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="date" 
+                  id="book-date" 
+                  required 
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+              </div>
+
+              <!-- Contact Number -->
+              <div>
+                <label for="book-contact" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Contact Number <span class="text-rose-500">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  id="book-contact" 
+                  name="contactNumber"
+                  data-validate="number"
+                  inputmode="numeric"
+                  required 
+                  value="+91 98765-43210" 
+                  placeholder="+91 98765-43210"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+              </div>
+            </div>
+
+            <!-- 4. Delivery Address & Slot (Grid) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- Delivery Address -->
+              <div class="sm:col-span-2">
+                <label for="book-address" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Delivery Address <span class="text-rose-500">*</span>
+                </label>
+                <textarea 
+                  id="book-address" 
+                  required 
+                  rows="2" 
+                  class="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >Flat 402, Royal Palms Heights, Green Park Avenue, New Delhi - 110016</textarea>
+                <span class="text-[10px] text-slate-400">As registered on Subscription Voucher (SV-IND-778291).</span>
+              </div>
+
+              <!-- Preferred Delivery Slot -->
+              <div>
+                <label for="book-slot" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                  Delivery Slot
+                </label>
+                <select id="book-slot" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
+                  <option value="Morning Slot (08:00 AM – 12:00 PM)">Morning Express (08:00 AM – 12:00 PM)</option>
+                  <option value="Afternoon Slot (12:00 PM – 04:00 PM)">Afternoon Slot (12:00 PM – 04:00 PM)</option>
+                  <option value="Evening Slot (04:00 PM – 08:00 PM)">Evening Slot (04:00 PM – 08:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- 5. Payment Preference -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                Payment Preference
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60">
+                  <input type="radio" name="payMethod" value="online" checked class="text-sky-600">
+                  <span>UPI / QR on Delivery</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60">
+                  <input type="radio" name="payMethod" value="netbanking" class="text-sky-600">
+                  <span>Prepaid Net Banking / Card</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60">
+                  <input type="radio" name="payMethod" value="cod" class="text-sky-600">
+                  <span>Cash on Delivery (COD)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 6. Real-Time Calculation & Confirm Booking Action -->
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="space-y-0.5 text-left w-full sm:w-auto">
+                <div class="text-xs text-slate-500 dark:text-slate-400">
+                  Gross MRP: <strong id="calc-mrp" class="text-slate-800 dark:text-slate-200">₹853.00</strong> | 
+                  Direct Subsidy: <strong id="calc-subsidy" class="text-emerald-600">- ₹240.00</strong>
+                </div>
+                <div class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                  Total Payable: <span id="calc-total" class="text-sky-600 dark:text-sky-400">₹613.00</span>
+                </div>
+              </div>
+              <button 
+                type="submit" 
+                id="btn-confirm-booking"
+                class="w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-md shadow-sky-600/30 transition flex items-center justify-center gap-2"
+              >
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Confirm Booking</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= 3. TAB: TRACK DELIVERY ================= -->
+      <section id="tab-tracking" class="space-y-6 hidden">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Real-Time Refill Dispatch</span>
+              <h2 class="text-xl font-black text-slate-900 dark:text-white font-['Outfit']">Track Refill Order #ORD-994821</h2>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800 text-xs font-bold text-amber-700 dark:text-amber-400">
+              <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+              <span>Vehicle En Route</span>
+            </div>
+          </div>
+
+          <!-- Timeline Steps -->
+          <div class="relative border-l-2 border-sky-500/40 ml-4 pl-6 space-y-6 text-xs">
+            
+            <div class="relative">
+              <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900"></div>
+              <span class="font-bold text-sm text-slate-900 dark:text-white block">Step 1: Refill Order Confirmed</span>
+              <p class="text-slate-400">Order logged into Indane-Bharat LPG central exchange. Allocation ID #DEL-8812.</p>
+              <span class="text-[10px] text-slate-400 font-mono mt-1 block">08:30 AM | Electronic System</span>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900"></div>
+              <span class="font-bold text-sm text-slate-900 dark:text-white block">Step 2: Tare Weight & Leakage Inspection Passed</span>
+              <p class="text-slate-400">Gross Weight: 29.6 kg | Net Gas: 14.2 kg | O-Ring & Hydro-test Seal Verified.</p>
+              <span class="text-[10px] text-slate-400 font-mono mt-1 block">09:15 AM | Agency Safety Inspector</span>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900"></div>
+              <span class="font-bold text-sm text-slate-900 dark:text-white block">Step 3: Dispatched from Sector 62 Distribution Center</span>
+              <p class="text-slate-400">Loaded onto BlueFlame Delivery EV Vehicle (DL-4C-9821).</p>
+              <span class="text-[10px] text-slate-400 font-mono mt-1 block">10:00 AM | Warehouse Supervisor</span>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 animate-pulse"></div>
+              <span class="font-bold text-sm text-amber-600 dark:text-amber-400 block">Step 4: Out for Delivery in Your Area</span>
+              <p class="text-slate-600 dark:text-slate-300">Driver Rameshwar Yadav is currently delivering in Green Park / Sector 62 corridor. Estimated arrival within 45 minutes.</p>
+              <span class="text-[10px] text-amber-600 dark:text-amber-400 font-bold font-mono mt-1 block">Live Status: Approx 1.4 km away</span>
+            </div>
+
+            <div class="relative opacity-50">
+              <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-2 border-white dark:border-slate-900"></div>
+              <span class="font-bold text-sm text-slate-500 block">Step 5: Cylinder Delivered & Weight Verified at Doorstep</span>
+              <p class="text-slate-400">Requires consumer OTP verification (OTP: 5824) and portable scale check.</p>
+            </div>
+
+          </div>
+
+          <!-- Simulation / Advancement Control -->
+          <div class="p-4 rounded-2xl bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800 flex items-center justify-between text-xs">
+            <div>
+              <span class="font-bold text-slate-800 dark:text-slate-200 block">Live Tracker Simulator</span>
+              <span class="text-slate-400">Advance order step for interactive demonstration.</span>
+            </div>
+            <button onclick="advanceTrackingSimulation()" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 transition">
+              Simulate Delivery Arrival
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. TAB: BOOKING HISTORY ================= -->
+      <section id="tab-history" class="space-y-6 hidden">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Official Gas Ledger</span>
+              <h2 class="text-xl font-black text-slate-900 dark:text-white font-['Outfit']">Complete Booking History</h2>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-slate-400">Financial Year: 2026-27</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-400 font-bold uppercase tracking-wider">
+                  <th class="py-3">Booking ID</th>
+                  <th class="py-3">Date</th>
+                  <th class="py-3">Cylinder Details</th>
+                  <th class="py-3">Amount</th>
+                  <th class="py-3">Payment Mode</th>
+                  <th class="py-3">Order Status</th>
+                  <th class="py-3 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr>
+                  <td class="py-3.5 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-994821</td>
+                  <td class="py-3.5 text-slate-600 dark:text-slate-300">05 Nov 2026</td>
+                  <td class="py-3.5 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Subsidized</td>
+                  <td class="py-3.5 font-bold">₹853.00</td>
+                  <td class="py-3.5 text-slate-500">UPI Online</td>
+                  <td class="py-3.5"><span class="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold text-[10px]">In Transit</span></td>
+                  <td class="py-3.5 text-right"><button onclick="switchTab('tab-tracking')" class="text-sky-600 dark:text-sky-400 font-bold hover:underline">Track</button></td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-881920</td>
+                  <td class="py-3.5 text-slate-600 dark:text-slate-300">14 Oct 2026</td>
+                  <td class="py-3.5 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Subsidized</td>
+                  <td class="py-3.5 font-bold">₹853.00</td>
+                  <td class="py-3.5 text-slate-500">UPI Online</td>
+                  <td class="py-3.5"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Delivered</span></td>
+                  <td class="py-3.5 text-right"><button onclick="viewInvoice('ORD-881920')" class="text-sky-600 dark:text-sky-400 font-bold hover:underline">Invoice</button></td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-774120</td>
+                  <td class="py-3.5 text-slate-600 dark:text-slate-300">12 Sep 2026</td>
+                  <td class="py-3.5 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Subsidized</td>
+                  <td class="py-3.5 font-bold">₹853.00</td>
+                  <td class="py-3.5 text-slate-500">Cash on Delivery</td>
+                  <td class="py-3.5"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Delivered</span></td>
+                  <td class="py-3.5 text-right"><button onclick="viewInvoice('ORD-774120')" class="text-sky-600 dark:text-sky-400 font-bold hover:underline">Invoice</button></td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 font-mono font-bold text-sky-600 dark:text-sky-400">ORD-662910</td>
+                  <td class="py-3.5 text-slate-600 dark:text-slate-300">08 Aug 2026</td>
+                  <td class="py-3.5 text-slate-800 dark:text-slate-200 font-medium">14.2 kg Domestic Subsidized</td>
+                  <td class="py-3.5 font-bold">₹853.00</td>
+                  <td class="py-3.5 text-slate-500">Net Banking</td>
+                  <td class="py-3.5"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Delivered</span></td>
+                  <td class="py-3.5 text-right"><button onclick="viewInvoice('ORD-662910')" class="text-sky-600 dark:text-sky-400 font-bold hover:underline">Invoice</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. TAB: BILLING & PAYMENTS ================= -->
+      <section id="tab-billing" class="space-y-6 hidden">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Tax Invoices & DBTL Credits</span>
+              <h2 class="text-xl font-black text-slate-900 dark:text-white font-['Outfit']">Billing & Payment History</h2>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
+                ✓ All Current Invoices Paid
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
+              <span class="text-slate-400 text-xs block">Total Refill Invoices</span>
+              <span class="text-xl font-black text-slate-900 dark:text-white">₹3,412.00</span>
+              <span class="text-[10px] text-slate-400">4 Refills in FY 2026-27</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
+              <span class="text-slate-400 text-xs block">Direct DBTL Subsidies</span>
+              <span class="text-xl font-black text-emerald-600">₹960.00</span>
+              <span class="text-[10px] text-emerald-600 font-semibold">100% Cleared to Bank</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
+              <span class="text-slate-400 text-xs block">Pending Dues</span>
+              <span class="text-xl font-black text-slate-900 dark:text-white">₹0.00</span>
+              <span class="text-[10px] text-slate-400">No overdue payments</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left">
+              <thead>
+                <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-400 font-bold uppercase tracking-wider">
+                  <th class="py-3">Invoice #</th>
+                  <th class="py-3">Date</th>
+                  <th class="py-3">Gross</th>
+                  <th class="py-3">CGST / SGST</th>
+                  <th class="py-3">Net Paid</th>
+                  <th class="py-3">Payment Status</th>
+                  <th class="py-3 text-right">Download</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                <tr>
+                  <td class="py-3.5 font-mono font-bold text-sky-600">INV-2026-9948</td>
+                  <td class="py-3.5">05 Nov 2026</td>
+                  <td class="py-3.5">₹812.38</td>
+                  <td class="py-3.5 text-slate-400">₹40.62 (5%)</td>
+                  <td class="py-3.5 font-bold">₹853.00</td>
+                  <td class="py-3.5"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 font-bold text-[10px]">Paid</span></td>
+                  <td class="py-3.5 text-right"><button onclick="viewInvoice('ORD-994821')" class="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-600 font-bold hover:bg-sky-100">PDF</button></td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 font-mono font-bold text-sky-600">INV-2026-8819</td>
+                  <td class="py-3.5">14 Oct 2026</td>
+                  <td class="py-3.5">₹812.38</td>
+                  <td class="py-3.5 text-slate-400">₹40.62 (5%)</td>
+                  <td class="py-3.5 font-bold">₹853.00</td>
+                  <td class="py-3.5"><span class="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 font-bold text-[10px]">Paid</span></td>
+                  <td class="py-3.5 text-right"><button onclick="viewInvoice('ORD-881920')" class="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-600 font-bold hover:bg-sky-100">PDF</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 6. TAB: MY PROFILE ================= -->
+      <section id="tab-profile" class="space-y-6 hidden">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Official Connection KYC</span>
+            <h2 class="text-xl font-black text-slate-900 dark:text-white font-['Outfit']">Consumer Profile & Account Settings</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Review connection details, update contact parameters, and manage delivery instructions.</p>
+          </div>
+
+          <form onsubmit="handleProfileUpdate(event)" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="prof-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Consumer Name</label>
+                <input type="text" id="prof-name" name="profileName" data-validate="name" pattern="^[A-Za-z\s]+$" title="Please enter letters and spaces only" value="Vikramaditya Sharma" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
+              </div>
+              <div>
+                <label for="prof-consumer-id" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Consumer ID (Read-only)</label>
+                <input type="text" id="prof-consumer-id" value="LPG-8842-991" disabled class="w-full p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800/50 text-slate-400 text-sm cursor-not-allowed">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="prof-mobile" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Registered Mobile Number</label>
+                <input type="tel" id="prof-mobile" name="profileMobile" data-validate="number" inputmode="numeric" value="+91 98765-43210" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
+              </div>
+              <div>
+                <label for="prof-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Email Address</label>
+                <input type="email" id="prof-email" value="vikram.sharma@example.com" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="prof-address" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Registered Residential Address</label>
+              <textarea id="prof-address" rows="2" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">Flat 402, Royal Palms Heights, Green Park Avenue, New Delhi - 110016</textarea>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div>
+                <span class="text-slate-400 block">Subscription Voucher:</span>
+                <span class="font-mono font-bold text-slate-800 dark:text-slate-200">SV-IND-778291</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Aadhaar Linked:</span>
+                <span class="font-bold text-emerald-600">✓ Verified (UIDAI)</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Registered Distributor:</span>
+                <span class="font-bold text-slate-800 dark:text-slate-200">Bharat BlueFlame Sector 62</span>
+              </div>
+            </div>
+
+            <div class="flex justify-end pt-2">
+              <button type="submit" class="px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-sky-600 hover:bg-sky-500 shadow-sm transition">
+                Save Profile Changes
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= 7. TAB: SUPPORT ================= -->
+      <section id="tab-support" class="space-y-6 hidden">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Helpdesk & Grievance Cell</span>
+            <h2 class="text-xl font-black text-slate-900 dark:text-white font-['Outfit']">Customer Support & Complaint Desk</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Raise inquiries regarding delivery delay, seal tampering, DBTL subsidy, or technical assistance.</p>
+          </div>
+
+          <!-- Emergency Alert Box -->
+          <div class="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 flex items-center justify-between text-xs">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold">!</div>
+              <div>
+                <strong class="text-rose-900 dark:text-rose-200 block">Immediate Gas Leak Safety Protocol</strong>
+                <span class="text-rose-700 dark:text-rose-300">Turn off cylinder regulator knob immediately. Do not operate electrical switches.</span>
+              </div>
+            </div>
+            <a href="tel:01124409900" class="px-3.5 py-1.5 rounded-lg bg-rose-600 text-white font-bold hover:bg-rose-500">
+              Emergency Desk
+            </a>
+          </div>
+
+          <!-- Support Inquiry Form -->
+          <form onsubmit="handleSupportSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="supp-category" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Issue Category</label>
+                <select id="supp-category" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
+                  <option>Delivery Delay Enquiry</option>
+                  <option>Cylinder Weight / Seal Discrepancy</option>
+                  <option>DBTL Subsidy Not Credited</option>
+                  <option>Address Change Request</option>
+                  <option>Technical / Web Portal Assistance</option>
+                </select>
+              </div>
+              <div>
+                <label for="supp-order" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Related Order ID (Optional)</label>
+                <input type="text" id="supp-order" placeholder="e.g. ORD-994821" value="ORD-994821" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label for="supp-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">Complaint / Query Details</label>
+              <textarea id="supp-message" rows="3" required placeholder="Describe your issue in detail..." class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm"></textarea>
+            </div>
+
+            <div class="flex justify-end">
+              <button type="submit" class="px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-sky-600 hover:bg-sky-500 shadow-sm transition">
+                Submit Support Ticket
+              </button>
+            </div>
+          </form>
+
+          <!-- Support History -->
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+            <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200">Recent Support Tickets</h3>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div>
+                  <strong class="text-slate-900 dark:text-white block">TKT-8841: Scheduled Regulator Inspection</strong>
+                  <span class="text-slate-400">Created 28 Sep 2026 • Agency Safety Desk</span>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 font-bold text-[10px]">Resolved</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- INDEPENDENT MINIMAL APPLICATION FOOTER (No Common Website Footer - Requirement 4) -->
+  <footer class="py-4 text-center text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 BlueFlame LPG Gas Agency & Delivery Services Ltd. Portal Version 4.2.1</p>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-sky-600 dark:hover:text-sky-400">Return to Website</a>
+        <button onclick="logoutUser()" class="text-rose-500 hover:underline">Logout</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING SUCCESS MODAL (Requirement 1, Item 8: Booking Confirmation & Details) -->
+  <div id="booking-success-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="max-w-lg w-full bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-5 text-left">
+      <!-- Header with checkmark -->
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold flex-shrink-0">
+          <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-black text-slate-900 dark:text-white font-['Outfit']">Refill Booking Confirmed!</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Order has been registered with BlueFlame Central Dispatch.</p>
+        </div>
+      </div>
+      
+      <!-- Booking Details Grid -->
+      <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2.5 text-xs">
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Booking Reference ID:</span>
+          <span id="modal-order-id" class="font-mono font-bold text-sky-600 dark:text-sky-400">ORD-994821</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Consumer Name:</span>
+          <span id="modal-consumer-name" class="font-semibold text-slate-800 dark:text-slate-200">Vikramaditya Sharma</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Consumer ID / Mobile:</span>
+          <span id="modal-consumer-id" class="font-mono font-semibold text-slate-800 dark:text-slate-200">LPG-8842-991</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Cylinder Type:</span>
+          <span id="modal-cylinder-type" class="font-bold text-slate-900 dark:text-white">Domestic LPG Cylinder – 14.2 KG</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Quantity:</span>
+          <span id="modal-qty" class="font-semibold text-slate-800 dark:text-slate-200">1 Cylinder</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Booking Date & Slot:</span>
+          <span id="modal-date-slot" class="font-semibold text-slate-800 dark:text-slate-200">Today, Morning (08:00 AM - 12:00 PM)</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Delivery Address:</span>
+          <span id="modal-address" class="font-medium text-slate-700 dark:text-slate-300 text-right max-w-xs truncate">Flat 402, Royal Palms Heights...</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+          <span class="text-slate-400">Total Payable:</span>
+          <span id="modal-amount" class="font-black text-sm text-slate-900 dark:text-white">₹613.00</span>
+        </div>
+        <div class="flex justify-between pt-1">
+          <span class="text-slate-400">Delivery Security OTP:</span>
+          <span id="modal-otp" class="font-mono font-black text-base text-sky-600 dark:text-sky-400 tracking-wider">5824</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button onclick="closeBookingModal()" class="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">
+          Close
+        </button>
+        <button onclick="goToTrackingFromModal()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 shadow-md flex items-center gap-1.5">
+          <i data-lucide="truck" class="w-4 h-4"></i>
+          <span>Track Delivery Live</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script>
+    // Tab switching supporting all 7 sections
+    function switchTab(tabId) {
+      const allTabs = [
+        'tab-overview',
+        'tab-booking',
+        'tab-tracking',
+        'tab-history',
+        'tab-billing',
+        'tab-profile',
+        'tab-support'
+      ];
+
+      allTabs.forEach(id => {
+        const el = document.getElementById(id);
+        const navEl = document.getElementById(`nav-${id}`);
+        if (el) {
+          if (id === tabId) {
+            el.classList.remove('hidden');
+            el.classList.add('block');
+          } else {
+            el.classList.remove('block');
+            el.classList.add('hidden');
+          }
+        }
+        if (navEl) {
+          if (id === tabId) {
+            navEl.className = 'w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/60 border border-sky-200/60 dark:border-sky-800/60 transition';
+          } else {
+            navEl.className = 'w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition';
+          }
+        }
+      });
+
+      // Close mobile sidebar if open
+      const sidebar = document.getElementById('dashboard-sidebar');
+      if (window.innerWidth < 1024 && sidebar && !sidebar.classList.contains('hidden')) {
+        sidebar.classList.add('hidden');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Mobile Sidebar
+    function toggleDashboardSidebar() {
+      const sidebar = document.getElementById('dashboard-sidebar');
+      if (sidebar) {
+        sidebar.classList.toggle('hidden');
+      }
+    }
+
+    // Modal Control Functions
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-success-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function goToTrackingFromModal() {
+      closeBookingModal();
+      switchTab('tab-tracking');
+    }
+
+    // Handle Refill Booking
+    function handleRefillBooking(e) {
+      submitRefillBooking(e);
+    }
+
+    // Handle Profile Update
+    function handleProfileUpdate(e) {
+      e.preventDefault();
+      const name = document.getElementById('prof-name').value;
+      const mobile = document.getElementById('prof-mobile').value;
+      const topName = document.getElementById('topbar-user-name');
+      const sideName = document.getElementById('sidebar-user-name');
+      const welName = document.getElementById('welcome-user-name');
+      if (topName) topName.textContent = name;
+      if (sideName) sideName.textContent = name;
+      if (welName) welName.textContent = name;
+      showToast('Profile details updated successfully!', 'success');
+    }
+
+    // Handle Support Submit
+    function handleSupportSubmit(e) {
+      e.preventDefault();
+      const cat = document.getElementById('supp-category').value;
+      showToast(`Support ticket lodged for '${cat}'. Tracking token sent to mobile.`, 'success');
+      document.getElementById('supp-message').value = '';
+    }
+
+    // Advance Live Tracking Simulation
+    function advanceTrackingSimulation() {
+      showToast('Driver arrived at your location! Please verify OTP: 5824 with driver.', 'info');
+    }
+
+    // View Invoice Modal/Alert
+    function viewInvoice(orderId) {
+      showToast(`Generating official GST Tax Invoice for ${orderId}...`, 'info');
+    }
+
+    // Read URL query parameter for tab
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const reqTab = urlParams.get('tab');
+      if (reqTab && document.getElementById(`tab-${reqTab}`)) {
+        switchTab(`tab-${reqTab}`);
+      }
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

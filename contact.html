@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - BlueFlame LPG Gas Agency & Support</title>
+  <meta name="description" content="Get in touch with BlueFlame LPG Gas Agency. Connect with our distribution offices, submit refill inquiries, or request commercial manifold consultations.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            flame: {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+  <!-- Background Image System - Light & Dark Mode Compatible -->
+  <div class="site-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=2000&q=80');" aria-hidden="true"></div>
+  <div class="site-bg-overlay" aria-hidden="true"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 glass-header bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-5 xl:px-8">
+      <div class="flex items-center justify-between lg:grid lg:grid-cols-[auto_1fr_auto] xl:grid-cols-[1fr_auto_1fr] items-center h-20 gap-2 lg:gap-2.5 xl:gap-4">
+        
+        <!-- LEFT SIDE – Brand Identity -->
+        <div class="flex items-center justify-start flex-shrink-0 min-w-0">
+          <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 xl:gap-3 group text-left min-w-0">
+            <div class="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-9.5 lg:h-9.5 xl:w-11 xl:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1 sm:gap-1.5">
+                <span class="text-lg sm:text-xl lg:text-xl xl:text-2xl font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] whitespace-nowrap">
+                  BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 flex-shrink-0">LPG</span>
+              </div>
+              <span class="text-[9px] sm:text-[10px] xl:text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider sm:tracking-widest leading-none whitespace-nowrap">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CENTRE – Main Navigation (Strict Order: 1. Home, 2. About, 3. Services, 4. Safety Tips, 5. Blog, 6. Dashboard, 7. Contact) -->
+        <nav class="hidden lg:flex items-center justify-center">
+          <div class="flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2">
+            
+            <!-- 1. Home (Dropdown: Home1, Home2) -->
+            <div class="relative group">
+              <button class="flex items-center gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+                <span>Home</span>
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"></i>
+              </button>
+              <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-2 w-56 hidden group-hover:block group-focus-within:block z-50">
+                <div class="p-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-1.5">
+                  <a href="index.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home1</span>
+                      <span class="text-[10px] text-slate-400">Classic Agency</span>
+                    </div>
+                  </a>
+                  <a href="home2.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 group/item transition">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2 thumbnail" class="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover/item:text-sky-600 dark:group-hover/item:text-sky-400 transition">Home2</span>
+                      <span class="text-[10px] text-slate-400">Smart Technology</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. About -->
+            <a href="about.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              About
+            </a>
+
+            <!-- 3. Services -->
+            <a href="services.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Services
+            </a>
+
+            <!-- 4. Safety Tips -->
+            <a href="safety.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Safety Tips
+            </a>
+
+            <!-- 5. Blog -->
+            <a href="blog.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Blog
+            </a>
+
+            <!-- 6. Dashboard -->
+            <a href="dashboard.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition whitespace-nowrap">
+              Dashboard
+            </a>
+
+            <!-- 7. Contact -->
+            <a href="contact.html" class="px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-xs xl:text-sm font-bold text-sky-600 dark:text-sky-400 bg-sky-50/80 dark:bg-sky-950/50 border border-sky-200/50 dark:border-sky-800/50 transition whitespace-nowrap">
+              Contact
+            </a>
+
+          </div>
+        </nav>
+
+        <!-- RIGHT SIDE – Action Icons and Button in EXACT Order: 1. RTL/LTR, 2. Theme, 3. Login Icon Only, 4. Book a Gas -->
+        <div class="hidden lg:flex items-center justify-end gap-1.5 xl:gap-2.5 flex-shrink-0">
+          
+          <!-- 1. RTL/LTR toggle logo -->
+          <button onclick="toggleDirection()" aria-label="Toggle Text Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-4 h-4 dir-toggle-icon"></i>
+          </button>
+
+          <!-- 2. Dark/Light theme toggle -->
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-4 h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-4 h-4 theme-toggle-icon-moon"></i>
+          </button>
+
+          <!-- 3. Consumer Login logo/icon only (NO text) -->
+          <div class="user-auth-status flex items-center flex-shrink-0">
+            <a href="login.html" aria-label="Consumer Login" title="Consumer Login Portal" class="w-8.5 h-8.5 xl:w-10 xl:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- 4. Book a Gas button -->
+          <a href="dashboard.html?tab=booking" class="px-2.5 xl:px-4 py-2 rounded-xl text-xs xl:text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-md shadow-sky-500/20 hover:shadow-sky-500/30 transition flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-sky-200"></i>
+            <span>Book a Gas</span>
+          </a>
+
+        </div>
+
+        <!-- Mobile/Tablet Trigger (< lg) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 lg:hidden flex-shrink-0">
+          <button onclick="toggleDirection()" aria-label="Toggle Direction" title="Toggle RTL / LTR Direction" class="dir-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4 dir-toggle-icon"></i>
+          </button>
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" title="Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="sun" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-sun"></i>
+            <i data-lucide="moon" class="w-3.5 h-3.5 sm:w-4 sm:h-4 theme-toggle-icon-moon"></i>
+          </button>
+          <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" title="Menu" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center flex-shrink-0">
+            <i data-lucide="menu" class="w-4.5 h-4.5 sm:w-5 sm:h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div><!-- Mobile Drawer with All 7 Items + Accessible Controls & Book a Gas -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-4 pb-6 space-y-3">
+      <div class="flex flex-col space-y-1">
+        <div class="px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-400">Homepages</div>
+        <div class="grid grid-cols-2 gap-2 px-1 mb-2">
+          <a href="index.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=120&q=80" alt="Home1" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400">Home1</span>
+          </a>
+          <a href="home2.html" class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Home2" class="w-7 h-7 rounded-lg object-cover">
+            <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Home2</span>
+          </a>
+        </div>
+        <a href="about.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+        <a href="services.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Services</a>
+        <a href="safety.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Safety Tips</a>
+        <a href="blog.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Blog</a>
+        <a href="dashboard.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
+        <a href="contact.html" class="px-3 py-2 rounded-xl text-sm font-semibold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/50">Contact</a>
+        
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between px-3">
+          <span class="text-xs font-semibold text-slate-500">Consumer Login</span>
+          <a href="login.html" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+            <i data-lucide="user" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+      <div class="pt-2">
+        <a href="dashboard.html?tab=booking" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-center text-sm font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 shadow-md">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>Book a Gas</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="flex-grow">
+    
+    <!-- HEADER WITH REALISTIC LPG AGENCY & DELIVERY BACKGROUND -->
+    <section class="relative py-16 sm:py-24 bg-gradient-to-b from-slate-100 via-sky-50/40 to-slate-50 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-950 border-b border-slate-200/80 dark:border-slate-800 overflow-hidden">
+      <!-- Background Image with Light & Dark Mode Overlays -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/contact-hero-bg.jpg" 
+             alt="BlueFlame LPG gas agency cylinder depot and professional distribution logistics facility" 
+             class="w-full h-full object-cover object-center">
+        <!-- Dual Light / Dark overlay for optimal readability: balanced and transparent to reveal authentic LPG cylinder delivery details -->
+        <div class="absolute inset-0 bg-gradient-to-r from-white/94 via-white/86 to-white/78 dark:from-slate-950/94 dark:via-slate-950/86 dark:to-slate-900/80 backdrop-blur-[1px]"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-100/90 dark:bg-sky-950/90 text-sky-700 dark:text-sky-300 border border-sky-300/60 dark:border-sky-800 shadow-sm backdrop-blur-sm">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Customer Assistance & Agency Helplines</span>
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-['Outfit']">
+          We Are Here To Assist Your Cooking Energy Needs
+        </h1>
+        <p class="text-base text-slate-700 dark:text-slate-200 max-w-2xl leading-relaxed font-medium">
+          Reach our central distribution office, visit local depot hubs, or submit an online service request. Our team responds promptly.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="pt-2 flex flex-wrap items-center gap-3 text-xs sm:text-sm">
+          <a href="#support" class="px-4 py-2.5 rounded-xl font-bold text-white bg-sky-600 hover:bg-sky-500 shadow-md shadow-sky-500/20 transition flex items-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Send Inquiry</span>
+          </a>
+          <a href="tel:01124409900" class="px-4 py-2.5 rounded-xl font-bold bg-white/90 dark:bg-slate-800/90 hover:bg-white dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 shadow-sm transition flex items-center gap-2 backdrop-blur-sm">
+            <i data-lucide="phone-call" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+            <span>Call Helplines</span>
+          </a>
+          <a href="dashboard.html?tab=booking" class="px-4 py-2.5 rounded-xl font-bold bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md transition flex items-center gap-2">
+            <i data-lucide="flame" class="w-4 h-4 text-sky-200"></i>
+            <span>Book a Gas</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CONTACT FORM & HEAD OFFICE (Unique Contact Images 1 & 2) -->
+    <section id="support" class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Contact Form (Left 7 cols) -->
+          <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-800/50 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-700 text-left space-y-6">
+            <div>
+              <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest">Inquiry Form</span>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">Send Us A Message</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">We reply within 2 business hours.</p>
+            </div>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs sm:text-sm">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contact-name" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Your Full Name</label>
+                  <input type="text" id="contact-name" name="name" data-validate="name" pattern="^[A-Za-z\s]+$" title="Please enter letters and spaces only" required placeholder="e.g. Vikramaditya Sharma" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                </div>
+                <div>
+                  <label for="contact-mobile" class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Mobile Number</label>
+                  <input type="tel" id="contact-mobile" name="mobile" data-validate="number" inputmode="numeric" maxlength="10" required placeholder="10-digit mobile" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">LPG Consumer ID (Optional)</label>
+                  <input type="text" placeholder="e.g. LPG-8842-991" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Inquiry Category</label>
+                  <select class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                    <option>Refill Delivery Inquiry</option>
+                    <option>New Connection Registration</option>
+                    <option>Commercial 19kg Supply</option>
+                    <option>Stove & Burner Servicing</option>
+                    <option>Subsidy / Banking Assistance</option>
+                    <option>General Feedback</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Message Details</label>
+                <textarea rows="4" required placeholder="Describe your requirement or question..." class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-white bg-sky-600 hover:bg-sky-500 transition shadow-md flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Submit Inquiry</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Headquarters Card & Image (Right 5 cols) -->
+          <div class="lg:col-span-5 space-y-6 text-left">
+            
+            <!-- Unique Contact Image 1 -->
+            <div class="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-md h-56">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" 
+                   alt="BlueFlame corporate headquarters and central energy office" 
+                   class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4 text-white">
+                <div>
+                  <span class="text-[10px] font-bold bg-sky-600 px-2 py-0.5 rounded text-white uppercase">Head Office</span>
+                  <h4 class="text-base font-bold mt-1">Apex Energy Hub, Sector 62</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact List -->
+            <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-4 text-xs sm:text-sm">
+              <div class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block font-bold">Physical Address</strong>
+                  <span class="text-slate-600 dark:text-slate-300">Apex Energy Hub, 14 Industrial Corridor, Sector 62, New Delhi - 110001</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block font-bold">Office Line</strong>
+                  <span class="text-slate-600 dark:text-slate-300">011-2440-9900 (Customer Service)</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <strong class="text-slate-900 dark:text-white block font-bold">Official Email</strong>
+                  <span class="text-slate-600 dark:text-slate-300">support@blueflamelpg.com</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: DEPOT BRANCH DIRECTORY (Unique Contact Image 2) -->
+    <section class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+          <div>
+            <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest">Regional Depots</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Our Branch Network</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-sky-500">
+              <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=400&q=80" 
+                   alt="Customer service manager" 
+                   class="w-full h-full object-cover">
+            </div>
+            <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Depot Officers On Duty</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300">Depot 01</span>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Central City Depot</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Near Green Park Metro, Sector 12, South Zone</p>
+            <p class="text-xs font-semibold text-sky-600 dark:text-sky-400 pt-2">Phone: 011-2440-9911</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">Depot 02</span>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">North Industrial Substation</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Plot 88, Wazirpur Industrial Area, North Zone</p>
+            <p class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 pt-2">Phone: 011-2440-9922</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+            <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Depot 03</span>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">East Commercial Bottling Annex</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Block B, Patparganj Commercial Complex</p>
+            <p class="text-xs font-semibold text-purple-600 dark:text-purple-400 pt-2">Phone: 011-2440-9933</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2.5: DOORSTEP SERVICE & REFILL ASSISTANCE DESK (Dedicated Visual & Content Block) -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Image Column with Topic-Specific Visual -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700 h-72 sm:h-80 group">
+              <img src="assets/images/contact-customer-assist.jpg" 
+                   alt="LPG customer support advisor assisting consumer with refill scheduling and emergency inquiries" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex items-end p-6 text-white">
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[10px] font-bold bg-sky-600 text-white uppercase tracking-wider">
+                    <i data-lucide="headphones" class="w-3 h-3"></i> Real-Time Helpdesk
+                  </span>
+                  <h4 class="text-base sm:text-lg font-bold mt-1">Direct Doorstep Dispatch & Support Team</h4>
+                  <p class="text-xs text-slate-300">Available 7 days a week for immediate resolution.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="space-y-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-50 dark:bg-sky-950/70 text-sky-700 dark:text-sky-300 border border-sky-200/80 dark:border-sky-800">
+                <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-500"></i>
+                <span>Doorstep Service & Refill Assistance Desk</span>
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                Immediate Refill Scheduling & Technical Dispatch
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Whether you need urgent emergency cylinder replenishment, leak detection inspection, or help transferring your LPG connection to a new address, our operations dispatch desk connects you with your designated neighborhood delivery technician within minutes.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                  <i data-lucide="phone-call" class="w-4 h-4 text-emerald-500"></i>
+                  <span>24/7 Priority Emergency Line</span>
+                </div>
+                <p class="text-xs font-black text-emerald-600 dark:text-emerald-400">1800-233-3555 (Toll-Free)</p>
+                <p class="text-[11px] text-slate-500">Immediate technician dispatch for gas odor or regulator leak.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-1">
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
+                  <i data-lucide="clock" class="w-4 h-4 text-sky-500"></i>
+                  <span>WhatsApp Refill Bot</span>
+                </div>
+                <p class="text-xs font-black text-sky-600 dark:text-sky-400">+91 98765-43210</p>
+                <p class="text-[11px] text-slate-500">Type "REFILL" with your Consumer ID for instant booking.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="dashboard.html?tab=booking" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-sky-600 hover:bg-sky-500 transition shadow-md flex items-center gap-2">
+                <i data-lucide="truck" class="w-4 h-4"></i>
+                <span>Schedule Doorstep Refill</span>
+              </a>
+              <a href="#location" class="px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 transition">
+                View Central Depot Location ↓
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: AGENCY LOCATION & MAP (Requirement 3) -->
+    <section id="location" class="py-16 sm:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="space-y-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/60 dark:border-sky-800">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span>Distribution Headquarters</span>
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+              Agency Location & Central Depot Facility
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl">
+              Visit our central gas distribution hub for in-person customer service, document verification, commercial bulk booking, and cylinder exchange.
+            </p>
+          </div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Apex+Energy+Hub+Sector+62+New+Delhi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm text-white bg-sky-600 hover:bg-sky-500 shadow-md hover:shadow-lg transition duration-200 flex-shrink-0">
+            <i data-lucide="navigation-2" class="w-4 h-4"></i>
+            <span>Get Directions</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Location Details Card (Left 4 cols) -->
+          <div class="lg:col-span-4 bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-700 space-y-6 flex flex-col justify-between">
+            <div class="space-y-5">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Official Address</span>
+                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Apex Energy Hub</h4>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-1">
+                  14 Industrial Corridor, Sector 62,<br>
+                  New Delhi, Delhi - 110001
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 space-y-3 text-xs sm:text-sm">
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Operating Hours</span>
+                  <p class="text-slate-700 dark:text-slate-300 font-semibold">Monday – Saturday: 08:00 AM – 08:00 PM</p>
+                  <p class="text-slate-500 text-xs">Sunday: 09:00 AM – 02:00 PM (Emergency Desk 24/7)</p>
+                </div>
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">Depot Control Desk</span>
+                  <p class="text-slate-700 dark:text-slate-300 font-semibold">011-2440-9900</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Apex+Energy+Hub+Sector+62+New+Delhi" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-sky-300 dark:border-sky-800 text-sky-600 dark:text-sky-400 font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-sky-50 dark:hover:bg-sky-950/50 transition">
+                <span>Open in Google Maps</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Google Maps Embed Container (Right 8 cols) -->
+          <div class="lg:col-span-8 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-md min-h-[350px] relative bg-slate-100 dark:bg-slate-800">
+            <iframe 
+              title="BlueFlame LPG Central Location Map"
+              class="w-full h-full min-h-[350px] border-0"
+              src="https://maps.google.com/maps?q=Sector+62+Noida+Delhi+NCR&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RICH FOOTER WITH CLICKABLE BRAND LOGO & EXACT 3 SOCIAL ICONS -->
+  <footer class="bg-slate-900 text-slate-300 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-left">
+        
+        <!-- Col 1: Brand Info & Clickable Logo -->
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center gap-3.5 group text-left">
+            <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-lg flame-glow-blue group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <i data-lucide="flame" class="w-6 h-6 text-white stroke-[2.2]"></i>
+              <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xl font-black tracking-tight text-white font-['Outfit']">
+                  BLUE<span class="text-sky-400">FLAME</span>
+                </span>
+                <span class="px-1.5 py-0.5 text-[10px] font-bold rounded bg-sky-950 text-sky-300 border border-sky-400/30">LPG</span>
+              </div>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                Gas Agency & Delivery
+              </span>
+            </div>
+          </a>
+
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Government Authorized LPG Distribution Agency compliant with Petroleum and Explosives Safety Organization standards. Dedicated to providing dependable, clean cooking fuel and doorstep energy solutions.
+          </p>
+
+          <!-- Social Media Icons -->
+          <div class="pt-2">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Connect With Us</span>
+            <div class="flex items-center gap-3">
+              <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook Login" title="Facebook" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#1877F2] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram Login" title="Instagram" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#E4405F] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube Login" title="YouTube" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-[#FF0000] text-slate-300 hover:text-white border border-slate-700/80 flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition">Home1</a></li>
+            <li><a href="home2.html" class="hover:text-white transition">Home2</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="services.html" class="hover:text-white transition">Services & Refills</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Tips</a></li>
+            <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact & Branches</a></li>
+            <li><a href="dashboard.html" class="hover:text-white transition">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Consumer Services -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Services</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="services.html#new-connection" class="hover:text-white transition">Apply New Connection</a></li>
+            <li><a href="dashboard.html?tab=booking" class="hover:text-white transition">Book a Refill</a></li>
+            <li><a href="dashboard.html?tab=billing" class="hover:text-white transition">Download Tax Invoices</a></li>
+            <li><a href="services.html#stove-repair" class="hover:text-white transition">Burner Servicing</a></li>
+            <li><a href="safety.html" class="hover:text-white transition">Safety Standards</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Desk -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Desk</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i> Office: 011-2440-9900</p>
+            <p class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-sky-400"></i> support@blueflamelpg.com</p>
+            <p class="text-[11px] text-slate-500 pt-1">Mon – Sat: 08:00 AM – 08:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Col 5: Location / Visit Us Section -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Location</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p class="font-semibold text-slate-200">Apex Energy Hub</p>
+            <p class="text-[11px] leading-relaxed text-slate-400">
+              14 Industrial Corridor, Sector 62,<br>
+              New Delhi, Delhi - 110001
+            </p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Apex+Energy+Hub+Sector+62+New+Delhi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 pt-1 group">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-400 flex-shrink-0"></i>
+              <span>Get Directions</span>
+              <i data-lucide="external-link" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 BlueFlame LPG Gas Agency & Delivery Services Ltd. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showToast('Thank you! Your message has been sent to our customer desk.', 'success');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
