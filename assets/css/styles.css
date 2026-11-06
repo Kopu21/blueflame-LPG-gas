@@ -1,0 +1,314 @@
+/* LPG Gas Agency & Delivery - Custom Style & Theme System */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Responsive Navbar & Container Rules */
+header {
+  width: 100%;
+  max-width: 100vw;
+}
+
+@media (max-width: 425px) {
+  header .max-w-7xl {
+    padding-left: 0.75rem !important; /* 12px padding at 320px-425px to prevent right cutoff */
+    padding-right: 0.75rem !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  header nav a,
+  header nav button {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0.75rem !important; /* 12px text to ensure zero overlap at 1024px */
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+/* Direction Toggle Icon Flip */
+.dir-toggle-icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir="rtl"] .dir-toggle-icon {
+  transform: scaleX(-1);
+}
+
+/* Page-Specific Background Image System - Light & Dark Mode Compatible */
+.site-bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: opacity 0.4s ease;
+}
+
+.site-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -9;
+  pointer-events: none;
+  background: rgba(248, 250, 252, 0.93);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: background-color 0.35s ease;
+}
+
+.dark .site-bg-overlay {
+  background: rgba(2, 6, 23, 0.93);
+}
+
+/* Glassmorphism Styles */
+.glass-header {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Flame Glow & Accents */
+.flame-glow-blue {
+  box-shadow: 0 0 35px -5px rgba(14, 165, 233, 0.35);
+  animation: flameBreathe 4.5s ease-in-out infinite;
+}
+
+.flame-glow-orange {
+  box-shadow: 0 0 35px -5px rgba(249, 115, 22, 0.35);
+}
+
+.dark .flame-glow-blue {
+  box-shadow: 0 0 45px -5px rgba(56, 189, 248, 0.45);
+  animation: flameBreathe 4.5s ease-in-out infinite;
+}
+
+.dark .flame-glow-orange {
+  box-shadow: 0 0 45px -5px rgba(251, 146, 60, 0.45);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Subtle LPG-Related Animations System
+   Professional, Smooth, Lightweight & Accessible
+   ========================================================================== */
+
+/* 1. Subtle Flame Glow & Breathing for LPG Brand Elements */
+@keyframes flameBreathe {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.3));
+  }
+  50% {
+    transform: scale(1.025) translateY(-1px);
+    filter: drop-shadow(0 0 14px rgba(14, 165, 233, 0.45));
+  }
+}
+
+/* 2. Gentle Cylinder Image Float & Fade-In */
+@keyframes cylinderFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.lpg-cylinder-animate {
+  animation: cylinderFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.lpg-cylinder-animate:hover {
+  transform: translateY(-4px) scale(1.015);
+}
+
+/* 3. Smooth Hover Transitions for LPG Service & Delivery Cards */
+.lpg-card-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.lpg-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(14, 165, 233, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+}
+
+.dark .lpg-card-lift:hover {
+  box-shadow: 0 16px 32px -8px rgba(56, 189, 248, 0.15), 0 4px 12px -2px rgba(2, 6, 23, 0.5);
+}
+
+/* 4. Scroll Reveal for LPG Delivery & Service Sections */
+.lpg-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.lpg-reveal.lpg-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 5. Subtle Gas Pulse Badge Effect */
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.lpg-pulse-badge {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* 6. Accessibility: Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .flame-glow-blue,
+  .dark .flame-glow-blue {
+    animation: none !important;
+  }
+
+  .lpg-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .lpg-cylinder-animate,
+  .lpg-card-lift {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Smooth step transitions */
+.step-item.active .step-circle {
+  border-color: #0284c7;
+  background-color: #0284c7;
+  color: white;
+}
+.step-item.completed .step-circle {
+  border-color: #10b981;
+  background-color: #10b981;
+  color: white;
+}
+
+/* Print Invoice Styling */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #invoice-print-area, #invoice-print-area * {
+    visibility: visible;
+  }
+  #invoice-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
