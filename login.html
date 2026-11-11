@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consumer Login - BlueFlame LPG Gas Portal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="shortcut icon" href="assets/images/favicon.svg">
   <meta name="description" content="Secure LPG Consumer Portal for booking refills, live tracking, and digital payments.">
 
   <!-- Tailwind CSS CDN -->
@@ -48,15 +50,15 @@
       <!-- TOP ROW: Brand Identity on Left, Theme & RTL/LTR on Right (Exact match to reference screenshot) -->
       <div class="flex items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-slate-800">
         
-        <!-- LEFT SIDE: Brand Logo with Name (Navigation Disabled on Login Page) -->
-        <div class="flex items-center gap-3 text-left min-w-0 cursor-default select-none" role="banner" aria-label="BlueFlame LPG Gas Agency & Delivery">
-          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-md flame-glow-blue flex-shrink-0">
+        <!-- LEFT SIDE: Clickable Brand Logo redirecting to Home Page -->
+        <a href="index.html" class="flex items-center gap-3 text-left min-w-0 group cursor-pointer" title="Back to Home" aria-label="BlueFlame LPG - Go to Home Page">
+          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-sky-600 via-blue-600 to-cyan-400 flex items-center justify-center shadow-md flame-glow-blue flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
             <i data-lucide="flame" class="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]"></i>
             <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-white dark:border-slate-900 flex items-center justify-center text-[7px] font-black text-white">✓</span>
           </div>
           <div class="flex flex-col min-w-0">
             <div class="flex items-center gap-1.5">
-              <span class="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] truncate">
+              <span class="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-white font-['Outfit'] truncate group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                 BLUE<span class="text-sky-600 dark:text-sky-400">FLAME</span>
               </span>
               <span class="px-1.5 py-0.2 text-[9px] font-bold rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-300/50 flex-shrink-0">LPG</span>
@@ -65,7 +67,7 @@
               Gas Agency & Delivery
             </span>
           </div>
-        </div>
+        </a>
 
         <!-- RIGHT SIDE: Dark/Light Theme Toggle & RTL/LTR Direction Toggle -->
         <div class="flex items-center gap-2 flex-shrink-0">

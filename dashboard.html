@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consumer Dashboard - BlueFlame LPG Gas Portal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="shortcut icon" href="assets/images/favicon.svg">
   <meta name="description" content="LPG Consumer Self-Service Dashboard for refill booking, live driver tracking, invoice downloads, and DBTL subsidy management.">
 
   <!-- Tailwind CSS CDN -->
@@ -72,14 +74,14 @@
       <!-- Right: Consumer Profile Information & Controls -->
       <div class="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
         
-        <!-- Consumer Account Pill -->
-        <div class="hidden md:flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/80 dark:bg-emerald-950/40 text-xs text-emerald-800 dark:text-emerald-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <!-- Consumer Account Pill (hidden below lg to avoid 768px header overlap) -->
+        <div class="hidden lg:flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/80 dark:bg-emerald-950/40 text-xs text-emerald-800 dark:text-emerald-300 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"></span>
           <span class="font-medium">Domestic 14.2kg | ID: <strong id="topbar-consumer-id">LPG-8842-991</strong></span>
         </div>
 
         <!-- Quick Book Button -->
-        <button onclick="switchTab('tab-booking')" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-sm transition">
+        <button onclick="switchTab('tab-booking')" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 shadow-sm transition whitespace-nowrap flex-shrink-0">
           <i data-lucide="plus" class="w-3.5 h-3.5"></i>
           <span>Book Refill</span>
         </button>
@@ -114,8 +116,8 @@
   <!-- 2. MAIN APPLICATION CONTAINER (Sidebar + Dynamic Main Content) -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow flex flex-col lg:flex-row gap-6">
 
-    <!-- DASHBOARD SIDEBAR (Requirement 4: Dedicated Dashboard Sidebar with 8 Items) -->
-    <aside id="dashboard-sidebar" class="w-full lg:w-64 flex-shrink-0 space-y-4 hidden lg:block">
+    <!-- DASHBOARD SIDEBAR (Sticky on desktop lg+, accessible fixed drawer below sticky header on < lg) -->
+    <aside id="dashboard-sidebar" class="w-full lg:w-64 flex-shrink-0 space-y-4 hidden lg:block fixed top-[64px] inset-x-0 bottom-0 z-30 overflow-y-auto bg-slate-100/95 dark:bg-slate-950/95 backdrop-blur-md p-4 lg:p-0 lg:static lg:inset-auto lg:z-auto lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-none lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
       
       <!-- Consumer Account Card -->
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-left">

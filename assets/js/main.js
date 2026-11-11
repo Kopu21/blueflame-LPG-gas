@@ -107,7 +107,7 @@ function showToast(message, type = 'info') {
   }, 4000);
 }
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle (preserves sticky header without body overflow lock glitches)
 function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
   const backdrop = document.getElementById('mobile-menu-backdrop');
@@ -116,11 +116,9 @@ function toggleMobileMenu() {
     if (isHidden) {
       menu.classList.remove('hidden');
       if (backdrop) backdrop.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
     } else {
       menu.classList.add('hidden');
       if (backdrop) backdrop.classList.add('hidden');
-      document.body.style.overflow = '';
     }
   }
 }
