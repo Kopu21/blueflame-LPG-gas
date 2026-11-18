@@ -222,15 +222,15 @@
   <main class="flex-grow">
     
     <!-- HERO HEADER WITH DEDICATED LPG AGENCY OPERATIONS BACKGROUND -->
-    <section class="relative py-20 sm:py-28 bg-slate-900 text-white overflow-hidden border-b border-slate-800">
+    <section class="relative py-20 sm:py-28 text-white overflow-hidden border-b border-slate-200 dark:border-slate-800">
       <!-- High-Resolution LPG Distribution & Logistics Depot Background -->
-      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-1000 ease-out" 
-           style="background-image: url('assets/images/about-hero-bg.jpg');" 
-           aria-hidden="true"></div>
-      
-      <!-- Multi-stop Dark Gradient Overlay for optimal readability in both light & dark themes -->
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-900/60" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-sky-950/20 mix-blend-multiply" aria-hidden="true"></div>
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/about-hero-bg-v2.jpg" 
+             alt="BlueFlame LPG Distribution Agency Depot and Certified Professional Team" 
+             class="w-full h-full object-cover object-center sm:object-[center_35%]">
+        <!-- Dual Light / Dark overlay: Directional gradient protecting text on the left while keeping the team, depot, and cylinders bright and visible -->
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/60 to-slate-950/25 dark:from-slate-950/90 dark:via-slate-950/70 dark:to-slate-950/40"></div>
+      </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left space-y-5">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-400/40 backdrop-blur-sm">
